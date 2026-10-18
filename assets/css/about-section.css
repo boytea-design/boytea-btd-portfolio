@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800;900&display=swap');
-@font-face {font-family:'FightingGyeongnam';src:url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607131603@gfcredspirit-black/gfcredspirit-black/GFCRedSpirit-Black.woff2') format('woff2');font-weight:900;font-display:swap;}
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css');
 #about.about-section {
     background-color: #080808;
     background-image: none;
@@ -8,13 +7,13 @@
     scroll-margin-top: 90px;
     overflow: visible;
 }
-#about .about-layout {box-sizing:border-box;width:100%;max-width:1360px;min-height:760px;margin:auto;padding:90px 5% 85px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(400px,1fr);gap:clamp(38px,5vw,76px);font-family:'Noto Sans KR',Arial,sans-serif;}
+#about .about-layout {box-sizing:border-box;width:100%;max-width:1360px;min-height:760px;margin:auto;padding:90px 5% 85px;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(400px,1fr);gap:clamp(38px,5vw,76px);font-family: "SUIT Variable", "SUIT", Arial, sans-serif;}
 #about .about-layout * {box-sizing:border-box;}
 #about .left {display:flex;flex-direction:column;min-width:0;}
 #about .eyebrow {font-size:18px;font-weight:400;letter-spacing:-.04em;}
 #about .intro {margin-top:88px;}
-#about .intro .lead {font-family:'FightingGyeongnam',sans-serif;font-size:clamp(24px,2.2vw,32px);font-weight:900;line-height:1.45;letter-spacing:-.06em;margin:0;color:#f7f7f7;}
-#about .intro h1 {font-family:'FightingGyeongnam',sans-serif;font-size:clamp(38px,3.6vw,58px);font-weight:900;line-height:1.22;letter-spacing:-.075em;white-space:nowrap;margin:0;color:#f7f7f7;}
+#about .intro .lead {font-family: "SUIT Variable", "SUIT", Arial, sans-serif;font-size:clamp(24px,2.2vw,32px);font-weight:900;line-height:1.45;letter-spacing:-.06em;margin:0;color:#f7f7f7;}
+#about .intro h1 {font-family: "SUIT Variable", "SUIT", Arial, sans-serif;font-size:clamp(38px,3.6vw,58px);font-weight:900;line-height:1.22;letter-spacing:-.075em;white-space:nowrap;margin:0;color:#f7f7f7;}
 #about .vertical-line {height:120px;width:1px;background:#777;margin:16px 0 18px 3px;}
 #about .description {font-size:14px;line-height:1.8;letter-spacing:-.045em;color:#dedede;margin:0;max-width:470px;}
 #about .footnote {font-size:12px;font-weight:700;line-height:1.7;letter-spacing:-.04em;margin-top:auto;padding-top:40px;}

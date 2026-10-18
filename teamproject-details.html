@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team Project | BOY TEA</title>
+<link href="assets/css/main.css" rel="stylesheet">
+<style>
+:root{--detail-width:1144px}
+html{min-height:100%;background:#f2f2f2}
+body.detail-page{margin:0;min-height:100vh;display:flex;flex-direction:column;font-family:"SUIT Variable","SUIT",Arial,sans-serif;color:#111;background-color:#f2f2f2;background-image:linear-gradient(rgba(255,255,255,.55),rgba(255,255,255,.55)),url("assets/img/concrete_texture.png");background-size:auto,960px auto;background-position:center top;background-repeat:no-repeat,repeat}
+body.detail-page .detail-container,body.detail-page .detail-header-inner{width:min(var(--detail-width),calc(100% - 40px));max-width:none;margin-inline:auto}
+body.detail-page .detail-header{position:relative;width:100%;background:transparent;border:0;box-shadow:none;padding:0}
+body.detail-page .detail-header::before,body.detail-page .detail-header::after{content:none}
+body.detail-page .detail-header-inner{min-height:82px;padding:0;display:flex;align-items:center;justify-content:space-between;gap:24px}
+body.detail-page .detail-logo{color:#000;font-size:17px;font-weight:700;text-decoration:none;white-space:nowrap}
+body.detail-page .detail-nav{display:flex;align-items:center;justify-content:flex-end;gap:34px;margin-left:auto}
+body.detail-page .detail-nav a{color:#111;font-size:15px;font-weight:600;text-decoration:none;transition:transform .25s ease,font-weight .25s ease}
+body.detail-page .detail-nav a:hover{transform:translateY(-3px);font-weight:800}
+body.detail-page .detail-hero{background:transparent;color:#111;padding:30px 0 18px;overflow:visible}
+body.detail-page .detail-hero .detail-container{display:flex;align-items:center;justify-content:space-between;gap:24px;padding-bottom:22px;border-bottom:1px dashed rgba(0,0,0,.45)}
+body.detail-page .detail-hero h1{margin:0;padding:0;width:auto;font-size:clamp(36px,4.2vw,60px);font-weight:800;letter-spacing:-.045em;line-height:1.1;color:#000;white-space:nowrap}
+body.detail-page .detail-back{flex-shrink:0;color:#000;font-size:13px;font-weight:800;text-decoration:none;white-space:nowrap;transition:transform .25s ease}
+body.detail-page .detail-back:hover{transform:translateX(-4px)}
+body.detail-page .detail-content{flex:1;background:transparent;padding:20px 0 35px;overflow:visible}
+body.detail-page .detail-grid{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(280px,1fr);gap:28px;align-items:stretch}
+body.detail-page .team-slider{position:relative;min-width:0;aspect-ratio:16/9;overflow:visible;background:transparent;margin-bottom:22px}
+body.detail-page .team-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .85s ease;pointer-events:none}
+body.detail-page .team-slide.is-active{opacity:1;pointer-events:auto}
+body.detail-page .team-dots{position:absolute;left:0;right:0;bottom:-23px;display:flex;justify-content:center;align-items:center;gap:8px;z-index:2}
+body.detail-page .team-dot{width:9px;height:9px;border:0;border-radius:50%;padding:0;background:#b9b9b9;opacity:.65;cursor:pointer;transition:background .25s ease,transform .25s ease,opacity .25s ease}
+body.detail-page .team-dot.is-active{background:#111;opacity:1;transform:scale(1.15)}
+body.detail-page .team-dot:focus-visible{outline:2px solid #111;outline-offset:3px}
+body.detail-page .detail-info{display:flex;flex-direction:column;justify-content:flex-start;height:100%;min-height:0;padding:20px 22px;border:1.5px solid #111;border-radius:8px;background:rgba(255,255,255,.35);box-sizing:border-box}
+body.detail-page .detail-info h2{margin:0 0 15px;padding-bottom:12px;font-size:20px;font-weight:800;color:#000;border-bottom:1px dashed rgba(0,0,0,.4)}
+body.detail-page .detail-info dl{margin:0}
+body.detail-page .detail-info dt{font-size:11px;font-weight:800;margin-bottom:3px;color:#111}
+body.detail-page .detail-info dd{margin:0 0 12px;font-size:13px;font-weight:500;line-height:1.5;color:#111}
+body.detail-page .detail-description{margin-top:auto;padding-top:13px;border-top:1px dashed rgba(0,0,0,.4)}
+body.detail-page .detail-description h3{margin:0 0 8px;font-size:16px;font-weight:800;color:#000}
+body.detail-page .detail-description p{margin:0;font-size:13px;font-weight:500;line-height:1.6;color:#111}
+body.detail-page .detail-footer{margin-top:auto;padding:20px 15px;background:transparent;border-top:1px solid rgba(0,0,0,.25);text-align:center;font-size:11px;font-weight:600;color:#111}
+@media(max-width:767px){body.detail-page .detail-header-inner{flex-direction:column;justify-content:center;padding:18px 0;gap:15px}body.detail-page .detail-nav{margin:0;justify-content:center;flex-wrap:wrap;gap:15px}body.detail-page .detail-nav a{font-size:13px}body.detail-page .detail-hero{padding-top:25px}body.detail-page .detail-hero .detail-container{flex-wrap:wrap;gap:15px}body.detail-page .detail-hero h1{font-size:clamp(28px,7vw,42px);white-space:normal}body.detail-page .detail-grid{grid-template-columns:1fr;gap:20px}body.detail-page .detail-info{height:auto;min-height:320px}body.detail-page .detail-description{margin-top:15px}}
+@media(prefers-reduced-motion:reduce){body.detail-page .team-slide{transition:none}}
+</style>
+</head>
+<body class="detail-page">
+<header class="detail-header"><div class="detail-header-inner"><a class="detail-logo" href="index.html">BOY TEA PORTFOLIO PROJECT</a><nav class="detail-nav" aria-label="메인 메뉴"><a href="index.html#hero">Home</a><a href="index.html#about">About</a><a href="index.html#resume">Resume</a><a href="index.html#portfolio">Portfolio</a><a href="index.html#contact">Contact</a></nav></div></header>
+<section class="detail-hero"><div class="detail-container"><h1>TEAM PROJECT.</h1><a class="detail-back" href="index.html#portfolio">← BACK TO PORTFOLIO</a></div></section>
+<main class="detail-content"><div class="detail-container"><div class="detail-grid">
+<!-- 슬라이드 이미지 경로는 실제 프로젝트 파일명으로 교체하세요. -->
+<div class="team-slider" id="teamSlider" aria-label="팀 프로젝트 이미지 슬라이드" tabindex="0">
+<img class="team-slide is-active" src="assets/img/thumbnails/teamproject-1.jpg" alt="팀 프로젝트 대표 이미지" />
+<img class="team-slide" src="assets/img/details/long-teamproject-1.jpg" alt="팀 프로젝트 이미지 2" />
+<div class="team-dots" id="teamDots" role="group" aria-label="슬라이드 선택"></div>
+</div>
+<aside class="detail-info"><h2>PROJECT INFORMATION</h2><dl><dt>CATEGORY</dt><dd>Team Project</dd><dt>PROJECT</dt><dd>프로젝트 제목 입력</dd><dt>ROLE</dt><dd>담당 역할 입력</dd><dt>MY CONTRIBUTION</dt><dd>직접 참여한 작업과 담당 범위 입력</dd><dt>TOOLS</dt><dd>사용 프로그램 입력</dd></dl><div class="detail-description"><h3>ABOUT PROJECT</h3><p>팀 프로젝트의 목표와 본인이 기여한 내용을 간단히 입력하세요.</p></div></aside>
+</div></div></main>
+<footer class="detail-footer">© 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.</footer>
+<script>
+(()=>{
+  const root=document.getElementById('teamSlider');
+  const slides=[...root.querySelectorAll('.team-slide')];
+  const dotsWrap=document.getElementById('teamDots');
+  if(!slides.length)return;
+  let index=0,timer;
+  const dots=slides.map((_,i)=>{
+    const dot=document.createElement('button');
+    dot.type='button';dot.className='team-dot';
+    dot.setAttribute('aria-label',`${i+1}번 이미지 보기`);
+    dot.addEventListener('click',()=>{show(i);restart()});
+    dotsWrap.appendChild(dot);return dot;
+  });
+  function show(n){
+    index=(n+slides.length)%slides.length;
+    slides.forEach((slide,i)=>{
+      const active=i===index;
+      slide.classList.toggle('is-active',active);
+      slide.setAttribute('aria-hidden',String(!active));
+      dots[i].classList.toggle('is-active',active);
+      dots[i].setAttribute('aria-current',active?'true':'false');
+    });
+  }
+  function restart(){
+    clearInterval(timer);
+    if(slides.length>1&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      timer=setInterval(()=>show(index+1),3200);
+    }
+  }
+  root.addEventListener('keydown',e=>{
+    if(e.key==='ArrowLeft'||e.key==='ArrowRight'){
+      e.preventDefault();show(index+(e.key==='ArrowLeft'?-1:1));restart();
+    }
+  });
+  root.addEventListener('mouseenter',()=>clearInterval(timer));
+  root.addEventListener('mouseleave',restart);
+  document.addEventListener('visibilitychange',()=>document.hidden?clearInterval(timer):restart());
+  show(0);restart();
+})();
+</script>
+</body>
+</html>

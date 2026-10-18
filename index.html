@@ -17,8 +17,6 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gravitas+One&display=swap" rel="stylesheet">
-
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
@@ -224,7 +222,7 @@
               <div class="portfolio-card">
                 <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/Thum_D01.jpg" alt="Design 01" loading="lazy"></div>
                 <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 01</h4><p>캐릭터 디자인 · 그린이</p></div>
-                  <a href="assets/img/details/Detail_D01.jpg" class="glightbox preview-link" data-gallery="portfolio-gallery-design" aria-label="Design 01 이미지 확대"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/details/Detail_D01.jpg" class="design-scroll-link details-link" aria-label="Design 01 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
               </div>
             </article>
@@ -232,7 +230,7 @@
               <div class="portfolio-card">
                 <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-4.jpg" alt="Design 02" loading="lazy"></div>
                 <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 02</h4><p>그래픽 디자인</p></div>
-                  <a href="assets/img/details/app-1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-design" aria-label="Design 02 이미지 확대"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/details/long-masonry-portfolio-2.jpg" class="design-scroll-link preview-link" aria-label="Design 02 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
               </div>
             </article>
@@ -256,7 +254,7 @@
               <div class="portfolio-card">
                 <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/teamproject-1.jpg" alt="Team Project 01" loading="lazy"></div>
                 <div class="portfolio-info"><div class="portfolio-copy"><h4>Team Project 01</h4><p>팀 프로젝트</p></div>
-                  <a href="portfolio-details.html" class="details-link" aria-label="Team Project 01 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
+                  <a href="teamproject-details.html" class="details-link" aria-label="Team Project 01 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
               </div>
             </article>
@@ -264,7 +262,7 @@
               <div class="portfolio-card">
                 <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-7.jpg" alt="Design 03" loading="lazy"></div>
                 <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 03</h4><p>브랜딩 · 패키지</p></div>
-                  <a href="assets/img/details/app-1.png" class="glightbox preview-link" data-gallery="portfolio-gallery-design" aria-label="Design 03 이미지 확대"><i class="bi bi-zoom-in"></i></a>
+                  <a href="assets/img/details/long-masonry-portfolio-3.jpg" class="design-scroll-link preview-link" aria-label="Design 03 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
               </div>
             </article>
@@ -280,7 +278,7 @@
               <div class="portfolio-card">
                 <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-6.jpg" alt="Figma 02" loading="lazy"></div>
                 <div class="portfolio-info"><div class="portfolio-copy"><h4>Figma 02</h4><p>앱 인터페이스</p></div>
-                  <a href="figma-details.html" class="details-link" aria-label="Figma 02 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
+                  <a href="figma-details02.html" class="details-link" aria-label="Figma 02 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
                 </div>
               </div>
             </article>
@@ -482,6 +480,13 @@
 
 
 </script>
+
+  <!-- 디자인 작품: 페이지 이동 없는 스크롤 팝업 -->
+  <div id="designScrollModal" class="design-scroll-modal" role="dialog" aria-modal="true" aria-label="디자인 작품 보기" aria-hidden="true">
+    <button type="button" class="design-scroll-close" aria-label="닫기">&times;</button>
+    <div class="design-scroll-viewport" tabindex="0"><img alt="디자인 상세 이미지"></div>
+  </div>
+  <script src="assets/js/design-scroll-modal.js"></script>
 </body>
 
 </html>
