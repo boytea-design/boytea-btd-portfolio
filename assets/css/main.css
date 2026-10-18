@@ -1,3 +1,5 @@
+@import url('https://cdn.jsdelivr.net/gh/sunn-us/SUIT/fonts/variable/woff2/SUIT-Variable.css');
+
 @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gravitas+One&family=Shrikhand&display=swap');
 
 
@@ -543,6 +545,38 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+
+
+/* ==========================================
+   SCROLL TOP — BLACK ROUNDED SQUARE
+========================================== */
+
+.scroll-top {
+  width: 44px;
+  height: 44px;
+
+  background: #000 !important;
+  border: 1px solid #000;
+  border-radius: 10px !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background 0.25s ease,
+              border-radius 0.25s ease;
+}
+
+.scroll-top i {
+  color: #fff !important;
+  font-size: 22px;
+}
+
+/* 마우스 호버 */
+.scroll-top:hover {
+  background: #333 !important;
+}
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
@@ -1575,4 +1609,1423 @@ section,
   #about .about-profile-intro p {
     font-size: 14px;
   }
+}
+
+/* ==================================
+   HOME HERO - 실전압축 포트폴리오
+================================== */
+
+body.index-page #hero.hero {
+  background: #ffffff url("../img/concrete_texture.png")
+              center center / cover no-repeat !important;
+}
+
+body.index-page #hero.hero::before {
+  display: none !important;
+}
+
+/* 전체 히어로 레이아웃 */
+body.index-page #hero.hero .hero-layout {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* 중앙: 메인 타이틀 + 우측 영문 */
+body.index-page #hero.hero .hero-main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 45px;
+  flex: 1;
+  transform: translateY(-55px);
+}
+
+/* 메인 타이틀 그룹 */
+body.index-page #hero.hero .hero-title-group {
+  width: 58%;
+  max-width: 700px;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* 상단 한글 */
+body.index-page #hero.hero p.hero-top-text {
+  position: static;
+  display: block;
+  width: 100%;
+  margin: 0 0 12px;
+  padding: 0;
+
+  font-family: "SUIT", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.03em;
+  color: #111111;
+  text-align: left;
+
+  animation: heroFadeUp 0.7s ease-out both;
+}
+
+/* 메인 타이틀 */
+body.index-page #hero.hero h1.hero-title {
+  position: static;
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+
+/* SVG 기존 템플릿 스타일 해제 */
+body.index-page #hero.hero img.hero-title-img {
+  position: static !important;
+  inset: auto !important;
+  display: block;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0;
+
+  animation: heroTitleReveal 0.9s
+    cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+
+/* 중앙 우측 영문 */
+body.index-page #hero.hero p.hero-side-text {
+  position: static;
+  flex-shrink: 0;
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  font-family: "SUIT", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.23em;
+  color: #111111;
+  white-space: nowrap;
+
+  animation: heroFadeUp 0.7s ease-out 0.65s both;
+}
+
+/* 하단 양쪽 정보 */
+body.index-page #hero.hero .hero-footer {
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* 좌측 하단 */
+body.index-page #hero.hero .hero-info {}
+
+/* ==================================
+   HEADER - 포트폴리오 메인
+================================== */
+
+/* 기존 로고 스타일 대신 프로젝트명 */
+
+/* 헤더 상단 여백 */
+body.index-page #header {
+  padding-top: 35px;
+  padding-bottom: 15px;
+}
+
+body.index-page #header .header-project-name {
+  margin: 0;
+  padding: 0;
+  font-family: "SUIT", sans-serif;
+  font-size: 19px;
+  font-weight: 200;
+  line-height: 1.2;
+  letter-spacing: -0.045em;
+  color: #111111;
+}
+
+@media (min-width: 1200px) {
+
+  body.index-page #header #navmenu {
+  border-bottom: 1px solid #c8c8c8;
+  padding-bottom: 12px;
+  padding-left: 80px;
+}
+
+  /* 메뉴 하단 선 */
+  body.index-page #header #navmenu {
+    border-bottom: 2px solid #c8c8c8;
+    padding-bottom: 9px;
+  }
+
+  /* 메뉴 항목 간격 */
+  body.index-page #header #navmenu > ul {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+
+  /* 메뉴 호버 - 살짝 상승 + 굵어짐 */
+@media (min-width: 1200px) {
+  body.index-page #header #navmenu a {
+    display: inline-block;
+    transition:
+      transform 0.25s ease,
+      font-weight 0.25s ease;
+  }
+
+  body.index-page #header #navmenu a:hover {
+    transform: translateY(-3px);
+    font-weight: 700;
+  }
+}
+
+  /* 기존 템플릿의 메뉴 여백 제거 */
+  body.index-page #header #navmenu > ul > li > a {
+    margin: 0;
+    padding: 0;
+    color: #111111;
+    font-family: "SUIT", sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  body.index-page #header #navmenu a:hover,
+  body.index-page #header #navmenu a.active {
+    color: #111111;
+  }
+}
+
+/* 히어로 하단 좌측 정보 */
+body.index-page #hero.hero .hero-info-small {
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  color: #999999;
+  margin-bottom: 5px;
+}
+
+body.index-page #hero.hero .hero-info-main {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: #111111;
+  font-weight: 500;
+}
+
+/* 히어로 하단 우측 스크롤 버튼 */
+body.index-page #hero.hero .hero-scroll {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 10px;
+  background: #111111;
+  color: #ffffff;
+  font-size: 11px;
+  line-height: 1.2;
+  text-decoration: none;
+}
+
+/* 화살표도 버튼과 같은 색상 */
+body.index-page #hero.hero .hero-scroll span {
+  color: #ffffff;
+}
+
+
+/* HERO 등장 애니메이션 */
+
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(45px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#hero .hero-title-group {
+  animation: heroFadeUp 1s ease-out 0.2s both;
+}
+
+#hero .hero-side-text {
+  animation: heroFadeUp 1s ease-out 0.5s both;
+}
+
+#hero .hero-footer {
+  animation: heroFadeUp 1s ease-out 0.8s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #hero .hero-title-group,
+  #hero .hero-side-text,
+  #hero .hero-footer {
+    animation: none;
+  }
+}
+
+/* HERO 콘크리트 텍스처 배경 */
+#hero {
+  background-image: url("../img/concrete_texture.png");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+
+body.index-page {
+  background: #ffffff !important;
+}
+
+/* 상단 메뉴와 히어로만 콘크리트 텍스처 */
+body.index-page #header.header,
+body.index-page #hero.hero {
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.35),
+      rgba(255, 255, 255, 0.35)
+    ),
+    url("../img/concrete_texture.png")
+    center center / cover no-repeat !important;
+}
+
+/* 히어로 기존 오버레이 제거 */
+body.index-page #hero.hero::before {
+  display: none;
+}
+
+/* Resume는 기존 배경색 유지 */
+body.index-page #resume {
+  background: #f2f6f9 !important;
+}
+
+/* HERO 하단 작은 영문 텍스트 완전 블랙 */
+#hero .hero-info-small {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+
+/* HERO → ABOUT 부드러운 경계 전환 */
+body.index-page #hero.hero {
+  position: relative;
+  overflow: hidden;
+}
+
+/* 히어로 하단 검은색 페이드 */
+body.index-page #hero.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  width: 100%;
+  height: 110px;
+
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.12) 30%,
+    rgba(0, 0, 0, 0.55) 70%,
+    #000000 100%
+  );
+
+  z-index: 4;
+  pointer-events: none;
+}
+
+/* 2026-10-18: HERO 세부 위치 및 헤더 가독성 보정 */
+@media (min-width: 1200px) {
+  /* 프로젝트명 크기는 유지하고 두께만 보강 */
+  body.index-page #header .header-project-name {
+    font-size: 19px;
+    font-weight: 500;
+  }
+
+  /* 메뉴 밑 선을 확실히 복원 */
+  body.index-page #header #navmenu {
+    position: relative;
+    border-bottom: 0 !important;
+  }
+  body.index-page #header #navmenu::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.6);
+    pointer-events: none;
+  }
+
+  /* 타이틀 + 우측 영문만 30px 위로 */
+  body.index-page #hero.hero .hero-main {
+    transform: translateY(-85px);
+  }
+
+  /* 타이틀 아래 정보 + 스크롤 버튼만 18px 아래로 */
+  body.index-page #hero.hero .hero-footer {
+    position: relative;
+    top: 18px;
+  }
+}
+
+
+/* =============================================================
+   BOY TEA / RESUME — reference layout, isolated from other pages
+   ============================================================= */
+body.index-page #resume.boytea-resume {
+  --background-color: #e9e9e7;
+  background: linear-gradient(rgba(255,255,255,.23),rgba(255,255,255,.23)),url("../img/concrete_texture.png") center / cover no-repeat !important;
+  color: #090909; padding: 60px 0 75px; min-height: 680px;
+  font-family: "SUIT", sans-serif; overflow: visible;
+}
+#resume.boytea-resume .resume-layout { width: min(1090px, calc(100% - 120px)); margin: 0 auto; }
+#resume.boytea-resume .resume-page-heading { color:#090909; font-family:inherit; font-size:42px; font-weight:850; line-height:1.1; margin:0 0 47px; letter-spacing:-.035em; }
+#resume.boytea-resume .resume-columns { display:grid; grid-template-columns: 1fr 1.14fr; column-gap:105px; align-items:start; }
+#resume.boytea-resume .resume-group-title { font-family:inherit; color:#090909; font-size:21px; font-weight:800; line-height:1.2; margin:0 0 23px; padding:0 0 7px; border-bottom:2px solid #111; }
+#resume.boytea-resume .resume-entry { margin:0 0 27px; }
+#resume.boytea-resume .resume-entry-head { border-left:4px solid #111; padding-left:10px; }
+#resume.boytea-resume .resume-entry-head h4 { font-family:inherit; color:#090909; font-size:18px; font-weight:800; text-transform:none; line-height:1.3; margin:0; letter-spacing:-.025em; }
+#resume.boytea-resume .resume-entry-head h4 span {font-weight:600; font-size:15px;}
+#resume.boytea-resume .resume-entry-head p { color:#090909; font-size:14px; font-weight:550; line-height:1.35; margin:0; }
+#resume.boytea-resume .resume-entry-detail { border-left:4px solid #111; padding:10px 0 0 10px; margin-top:7px; position:relative; }
+#resume.boytea-resume .resume-entry-detail::before { content:""; position:absolute; top:0; left:0; right:0; border-top:1px dotted rgba(0,0,0,.7); }
+#resume.boytea-resume .resume-entry-detail strong { font-size:13px; line-height:1.45; font-weight:750; display:block; }
+#resume.boytea-resume .resume-entry-detail p { color:#111; font-size:13px; line-height:1.35; font-weight:500; margin:2px 0 0; }
+#resume.boytea-resume .resume-column-right .resume-entry {margin-bottom:22px;}
+#resume.boytea-resume .resume-column-right .resume-group:first-child .resume-entry:first-of-type {padding-bottom:15px; border-bottom:1px dotted rgba(0,0,0,.7);}
+#resume.boytea-resume .resume-column-right .resume-group {margin-bottom:31px;}
+#resume.boytea-resume .resume-column-right .resume-group-title {margin-bottom:23px;}
+#resume.boytea-resume .resume-tools {font-size:14px; font-weight:600; line-height:2.2; margin:-11px 0 0; color:#111;}
+@media(max-width: 950px) {
+  #resume.boytea-resume .resume-layout {width:calc(100% - 64px);}
+  #resume.boytea-resume .resume-columns {column-gap:40px;grid-template-columns:1fr 1fr;}
+  #resume.boytea-resume .resume-entry-head h4 {font-size:16px;}
+  #resume.boytea-resume .resume-entry-head p {font-size:12px;}
+  #resume.boytea-resume .resume-wide-only {display:none;}
+}
+@media(max-width: 700px) {
+  body.index-page #resume.boytea-resume {padding:45px 0 65px;}
+  #resume.boytea-resume .resume-layout {width:calc(100% - 40px);}
+  #resume.boytea-resume .resume-page-heading {font-size:36px;margin-bottom:38px;}
+  #resume.boytea-resume .resume-columns {grid-template-columns:1fr;gap:20px;}
+  #resume.boytea-resume .resume-group-title {font-size:20px;}
+  #resume.boytea-resume .resume-entry {margin-bottom:28px;}
+  #resume.boytea-resume .resume-column-right .resume-group {margin-bottom:30px;}
+}
+
+
+/* ==========================================
+   RESUME: clearer texture, larger layout, soft transition
+========================================== */
+body.index-page #resume.boytea-resume {
+  position: relative;
+  isolation: isolate;
+  background: linear-gradient(rgba(255,255,255,.72),rgba(255,255,255,.72)),
+    url("../img/concrete_texture.png") center / cover no-repeat !important;
+  padding: 74px 0 105px;
+  min-height: 760px;
+}
+/* The black section dissolves into the light Resume surface. */
+
+#resume.boytea-resume .resume-layout {
+  position: relative;
+  z-index: 1;
+}
+
+#resume.boytea-resume .resume-layout { position: relative; z-index: 1; width: min(1220px, calc(100% - 110px)); }
+#resume.boytea-resume .resume-columns { column-gap: 90px; }
+#resume.boytea-resume .resume-page-heading { font-size: 46px; margin-bottom: 52px; }
+#resume.boytea-resume .resume-group-title { font-size: 23px; }
+#resume.boytea-resume .resume-entry-head h4 { font-size: 19px; }
+#resume.boytea-resume .resume-entry-head p { font-size: 15px; }
+#resume.boytea-resume .resume-entry-detail strong,
+#resume.boytea-resume .resume-entry-detail p { font-size: 14px; }
+#resume.boytea-resume .resume-tools { font-size: 15px; }
+
+/* Elements are visible by default; JS enables the reveal only when ready. */
+#resume.boytea-resume.resume-animate .resume-reveal {
+  opacity: 0;
+  transform: translate3d(0, 42px, 0);
+  transition: opacity .85s ease, transform .85s cubic-bezier(.22,1,.36,1);
+}
+#resume.boytea-resume.resume-animate .resume-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+@media (max-width: 950px) {
+  #resume.boytea-resume .resume-layout { width: calc(100% - 64px); }
+  #resume.boytea-resume .resume-columns { column-gap: 38px; }
+}
+@media (max-width: 700px) {
+  body.index-page #resume.boytea-resume { padding: 65px 0 75px; }
+  #resume.boytea-resume .resume-layout { width: calc(100% - 40px); }
+  #resume.boytea-resume .resume-page-heading { font-size: 38px; margin-bottom: 40px; }
+  #resume.boytea-resume .resume-columns { grid-template-columns: 1fr; }
+  #resume.boytea-resume .resume-entry-head h4 { font-size: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #resume.boytea-resume.resume-animate .resume-reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+}
+
+
+/* ABOUT → RESUME 경계 자연스럽게 연결 */
+
+/* ABOUT → RESUME 경계 그라데이션 */
+
+body.index-page #about.about-section {
+  position: relative;
+  z-index: 2;
+  overflow: visible;
+}
+
+body.index-page #about.about-section::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 75px;
+
+  background: linear-gradient(
+    to bottom,
+    #080808 0%,
+    rgba(8, 8, 8, 0.85) 15%,
+    rgba(8, 8, 8, 0.45) 45%,
+    rgba(8, 8, 8, 0.12) 75%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: 3;
+}
+
+body.index-page #resume.boytea-resume {
+  position: relative;
+  z-index: 1;
+}
+
+body.index-page #resume.boytea-resume::before {
+  content: none;
+}
+
+
+/* RESUME 전체 콘텐츠 위치 조정 */
+
+body.index-page #resume.boytea-resume {
+  padding-top: 150px;
+}
+
+
+/* ==========================================================
+   BOY TEA / PORTFOLIO — 9-card asymmetric masonry layout
+   ========================================================== */
+body.index-page #portfolio.boytea-portfolio {
+  background: #fff !important;
+  color: #111;
+  padding: 80px 0 115px;
+  overflow: visible;
+  font-family: "SUIT", sans-serif;
+}
+#portfolio.boytea-portfolio .portfolio-shell {max-width: 1320px; padding-left: 24px; padding-right: 24px;}
+#portfolio.boytea-portfolio .portfolio-heading-wrap {border-bottom: 1px solid #999; margin-bottom: 16px;}
+#portfolio.boytea-portfolio .portfolio-heading-wrap h2 {font: 850 42px/1.2 "SUIT",sans-serif; letter-spacing: -.045em; color: #090909; margin: 0 0 14px;}
+#portfolio.boytea-portfolio .portfolio-filters {display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 10px; margin: 0 0 38px; text-align: left;}
+#portfolio.boytea-portfolio .portfolio-filters li {border: 1px solid #777; border-radius: 30px; background: #fff; color: #111; font: 600 11px/1 "SUIT",sans-serif; padding: 4px 17px; margin: 0; min-width: 76px; text-align: center; transition: background .25s,color .25s;}
+#portfolio.boytea-portfolio .portfolio-filters li:hover,
+#portfolio.boytea-portfolio .portfolio-filters li.filter-active {background: #090909; color: #fff; border-color: #090909;}
+#portfolio.boytea-portfolio .portfolio-grid {margin-left: -12px; margin-right: -12px; row-gap: 0;}
+#portfolio.boytea-portfolio .portfolio-item {padding: 0 12px 24px; overflow: visible;}
+#portfolio.boytea-portfolio .portfolio-card {position: relative; overflow: hidden; border-radius: 7px; background: #d3d3d3; transition: transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s;}
+#portfolio.boytea-portfolio .portfolio-thumbnail {display: block; width: 100%; height: 100%; overflow: hidden;}
+#portfolio.boytea-portfolio .portfolio-thumbnail img {display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .5s cubic-bezier(.2,.7,.2,1);}
+#portfolio.boytea-portfolio .portfolio-size-large .portfolio-card {height: 320px;}
+#portfolio.boytea-portfolio .portfolio-size-medium .portfolio-card {height: 270px;}
+#portfolio.boytea-portfolio .portfolio-size-small .portfolio-card {height: 235px;}
+#portfolio.boytea-portfolio .portfolio-item:hover {z-index: 5;}
+#portfolio.boytea-portfolio .portfolio-item:hover .portfolio-card {transform: translateY(-9px) scale(1.018); box-shadow: 0 18px 32px rgba(0,0,0,.18);}
+#portfolio.boytea-portfolio .portfolio-item:hover img {transform: scale(1.055);}
+#portfolio.boytea-portfolio .portfolio-item .portfolio-info {left: 0; right: 0; bottom: 0; padding: 20px 18px 16px; background: linear-gradient(transparent,rgba(0,0,0,.83)); color: #fff; display: flex; align-items: end; justify-content: space-between; gap: 8px; transform: translateY(12px); opacity: 0; transition: opacity .3s,transform .3s;}
+#portfolio.boytea-portfolio .portfolio-item:hover .portfolio-info,
+#portfolio.boytea-portfolio .portfolio-item:focus-within .portfolio-info {opacity: 1; transform: translateY(0);}
+#portfolio.boytea-portfolio .portfolio-info h4 {color: #fff; font: 750 19px/1.25 "SUIT",sans-serif; margin: 0 0 4px; padding: 0;}
+#portfolio.boytea-portfolio .portfolio-info p {color: #eee; font: 500 13px/1.4 "SUIT",sans-serif; margin: 0; padding: 0;}
+#portfolio.boytea-portfolio .portfolio-info .preview-link,
+#portfolio.boytea-portfolio .portfolio-info .details-link {position: static; display: grid; place-items: center; width: 34px; height: 34px; flex: 0 0 34px; color: #fff; font-size: 23px; text-decoration: none;}
+#portfolio.boytea-portfolio .portfolio-info .preview-link:hover,
+#portfolio.boytea-portfolio .portfolio-info .details-link:hover {color: #fff; transform: scale(1.12);}
+@media (max-width: 767px) {
+  body.index-page #portfolio.boytea-portfolio {padding: 58px 0 75px;}
+  #portfolio.boytea-portfolio .portfolio-shell {padding-left: 20px; padding-right: 20px;}
+  #portfolio.boytea-portfolio .portfolio-heading-wrap h2 {font-size: 36px;}
+  #portfolio.boytea-portfolio .portfolio-filters {gap: 7px; margin-bottom: 28px;}
+  #portfolio.boytea-portfolio .portfolio-filters li {min-width: 0; padding: 7px 11px;}
+  #portfolio.boytea-portfolio .portfolio-size-large .portfolio-card,
+  #portfolio.boytea-portfolio .portfolio-size-medium .portfolio-card,
+  #portfolio.boytea-portfolio .portfolio-size-small .portfolio-card {height: 290px;}
+  #portfolio.boytea-portfolio .portfolio-item .portfolio-info {opacity: 1; transform: none;}
+}
+@media (prefers-reduced-motion: reduce) {
+  #portfolio.boytea-portfolio .portfolio-card,
+  #portfolio.boytea-portfolio .portfolio-thumbnail img,
+  #portfolio.boytea-portfolio .portfolio-info {transition: none !important;}
+}
+
+/* 2026-10-19 Portfolio card proportions + filter sizing */
+#portfolio.boytea-portfolio .portfolio-filters {gap: 12px; margin-bottom: 36px;}
+#portfolio.boytea-portfolio .portfolio-filters li {
+  min-width: 100px; padding: 9px 22px; font-size: 13px;
+  border-radius: 24px; line-height: 1.1;
+}
+#portfolio.boytea-portfolio .portfolio-filters li:last-child {min-width: 148px;}
+/* All cards have the same height: asymmetric sizing affects width only.
+   This also prevents the large empty gaps caused by differing masonry heights. */
+#portfolio.boytea-portfolio .portfolio-size-large .portfolio-card,
+#portfolio.boytea-portfolio .portfolio-size-medium .portfolio-card,
+#portfolio.boytea-portfolio .portfolio-size-small .portfolio-card {height: 385px;}
+#portfolio.boytea-portfolio .portfolio-size-medium .portfolio-card {width: 91%;}
+#portfolio.boytea-portfolio .portfolio-size-small .portfolio-card {width: 78%;}
+#portfolio.boytea-portfolio .portfolio-grid {row-gap: 0;}
+/* Blur the lower edge of the textured header without blurring menu text. */
+body.index-page #header {position: relative; isolation: isolate;}
+
+@media (max-width: 767px) {
+  #portfolio.boytea-portfolio .portfolio-filters li {min-width: 0; padding: 8px 14px; font-size: 12px;}
+  #portfolio.boytea-portfolio .portfolio-filters li:last-child {min-width: 0;}
+  #portfolio.boytea-portfolio .portfolio-size-large .portfolio-card,
+  #portfolio.boytea-portfolio .portfolio-size-medium .portfolio-card,
+  #portfolio.boytea-portfolio .portfolio-size-small .portfolio-card {width: 100%; height: 340px;}
+}
+
+
+/* HEADER 하단 경계 블러 */
+
+body.index-page #header {
+  overflow: visible;
+}
+
+
+
+
+/* ==========================================
+   HEADER - 스크롤 고정
+========================================== */
+
+body.index-page #header.header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 997;
+}
+
+/* 헤더에 콘텐츠가 가려지지 않도록 보정 */
+body.index-page {
+  padding-top: 0;
+}
+
+body.index-page #hero.hero {
+  padding-top: 110px;
+}
+
+/* 메뉴 이동 시 제목이 가려지지 않도록 */
+body.index-page section {
+  scroll-margin-top: 110px;
+}
+
+
+/* ==========================================
+   PORTFOLIO - 카드 간격 통일
+========================================== */
+
+/* 기존 Bootstrap 행 간격 유지 */
+#portfolio.boytea-portfolio .portfolio-grid {
+  margin-left: -12px;
+  margin-right: -12px;
+  row-gap: 0;
+}
+
+/* 모든 카드의 바깥 간격 동일 */
+#portfolio.boytea-portfolio .portfolio-item {
+  padding: 0 12px 24px;
+}
+
+/* 카드 높이 통일 */
+#portfolio.boytea-portfolio .portfolio-card {
+  width: 100% !important;
+  height: 385px !important;
+}
+
+/* 이미지 비율 유지 */
+#portfolio.boytea-portfolio .portfolio-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  #portfolio.boytea-portfolio .portfolio-card {
+    height: 340px !important;
+  }
+}
+
+
+/* HEADER 하단 블러 축소 및 농도 조절 */
+
+
+body.index-page #header,
+body.index-page #header.header {
+  box-shadow: none !important;
+}
+/* HEADER EDGE — single controlled soft fade */
+body.index-page #header.header {
+  isolation: auto;
+  overflow: visible;
+  box-shadow: none !important;
+}
+body.index-page #header.header::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0;
+  top: calc(100% - 1px);
+  height: 12px;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(90,90,90,.14), rgba(90,90,90,.045) 45%, transparent 100%);
+}
+
+
+/* HEADER 하단 - 그림자 제거 */
+body.index-page #header.header {
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+/* 기존 헤더 그림자 효과 제거 */
+body.index-page #header.header::after {
+  content: none !important;
+}
+
+/* 콘크리트 텍스처가 검정 배경으로 번지는 효과
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(100% - 1px);
+  height: 28px;
+
+  background: inherit;
+  background-position: center bottom;
+
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 100%
+  );
+
+  pointer-events: none;
+  z-index: -1;
+} */
+
+
+/* FINAL — PORTFOLIO GRID / CONTACT ONLY */
+/* Isotope fitRows: every item occupies the same 409px row (385px card + 24px gap). */
+#portfolio.boytea-portfolio .portfolio-grid {margin-left:-12px; margin-right:-12px; row-gap:0;}
+#portfolio.boytea-portfolio .portfolio-item {padding:0 12px 24px;}
+#portfolio.boytea-portfolio .portfolio-item .portfolio-card {width:100% !important; height:385px !important;}
+@media (max-width:767px) {
+  #portfolio.boytea-portfolio .portfolio-item .portfolio-card {height:340px !important;}
+}
+/* Contact — typographic monochrome layout */
+body.index-page #contact.boytea-contact {background:#fff; color:#111; padding:100px 0 70px;}
+#contact.boytea-contact .contact-shell {max-width:1320px; padding-left:24px; padding-right:24px;}
+#contact.boytea-contact .contact-heading-wrap {border-bottom:1px solid #999; margin-bottom:65px;}
+#contact.boytea-contact .contact-heading-wrap h2 {font:850 42px/1.2 'SUIT',sans-serif; letter-spacing:-.045em; color:#090909; margin:0 0 14px;}
+#contact.boytea-contact .contact-layout {display:grid; grid-template-columns:1fr 1fr; gap:80px; padding-bottom:100px;}
+#contact.boytea-contact .contact-eyebrow {font:700 12px/1.4 'SUIT',sans-serif; letter-spacing:.16em; margin:0 0 28px;}
+#contact.boytea-contact .contact-intro h3 {font:850 clamp(32px,3.7vw,56px)/1.23 'SUIT',sans-serif; letter-spacing:-.055em; color:#111; margin:0 0 28px;}
+#contact.boytea-contact .contact-description {font:500 15px/1.9 'SUIT',sans-serif; color:#555; margin:0;}
+#contact.boytea-contact .contact-details {border-top:2px solid #111;}
+#contact.boytea-contact .contact-detail {display:grid; grid-template-columns:125px minmax(0,1fr); gap:18px; align-items:start; border-bottom:1px solid #c9c9c9; padding:24px 0;}
+#contact.boytea-contact .contact-label {font:750 12px/1.6 'SUIT',sans-serif; letter-spacing:.08em;}
+#contact.boytea-contact .contact-value {font:650 16px/1.5 'SUIT',sans-serif; overflow-wrap:anywhere;}
+#contact.boytea-contact .contact-placeholder {color:#888; font-weight:500;}
+#contact.boytea-contact .contact-bottom {border-top:1px solid #111; padding-top:18px; display:flex; justify-content:space-between; gap:15px; font:650 11px/1.4 'SUIT',sans-serif; letter-spacing:.04em;}
+@media (max-width:767px) {
+  body.index-page #contact.boytea-contact {padding:65px 0 45px;}
+  #contact.boytea-contact .contact-shell {padding-left:20px; padding-right:20px;}
+  #contact.boytea-contact .contact-heading-wrap {margin-bottom:40px;}
+  #contact.boytea-contact .contact-heading-wrap h2 {font-size:36px;}
+  #contact.boytea-contact .contact-layout {grid-template-columns:1fr; gap:42px; padding-bottom:60px;}
+  #contact.boytea-contact .contact-detail {grid-template-columns:95px minmax(0,1fr); gap:10px;}
+  #contact.boytea-contact .contact-value {font-size:13px;}
+  #contact.boytea-contact .contact-bottom {flex-wrap:wrap;}
+}
+
+
+/* ============================================================
+   BOYTEA PORTFOLIO — 3-column asymmetric rows, no Isotope
+   Each desktop row totals 12 tracks; 24px consistent gaps.
+   ============================================================ */
+#portfolio.boytea-portfolio .portfolio-grid.row {
+  display: grid !important;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: 24px !important;
+  row-gap: 24px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  align-items: stretch;
+}
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  display: block;
+  box-sizing: border-box;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[hidden] {
+  display: none !important;
+}
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item > .portfolio-card {
+  width: 100% !important;
+  height: 330px !important;
+  margin: 0 !important;
+}
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item .portfolio-thumbnail {
+  height: 100%;
+}
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item .portfolio-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* Width patterns applied to visible items after each filter change */
+@media (min-width: 992px) {
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="1"] {grid-column: span 5;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="2"] {grid-column: span 3;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="3"] {grid-column: span 4;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="4"] {grid-column: span 3;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="5"] {grid-column: span 4;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="6"] {grid-column: span 5;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="7"] {grid-column: span 4;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="8"] {grid-column: span 5;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item[data-grid-slot="9"] {grid-column: span 3;}
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  #portfolio.boytea-portfolio .portfolio-grid.row {grid-template-columns: repeat(2,minmax(0,1fr));}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item {grid-column: auto !important;}
+}
+@media (max-width: 767px) {
+  #portfolio.boytea-portfolio .portfolio-grid.row {grid-template-columns: minmax(0,1fr); gap:20px !important;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item {grid-column: auto !important;}
+  #portfolio.boytea-portfolio .portfolio-grid > .portfolio-item > .portfolio-card {height: 340px !important;}
+}
+
+
+/* Fallback: widths are correct even before JS loads. */
+@media (min-width:992px) {
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 1) { grid-column: span 5; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 2) { grid-column: span 3; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 3) { grid-column: span 4; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 4) { grid-column: span 3; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 5) { grid-column: span 4; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 6) { grid-column: span 5; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 7) { grid-column: span 4; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 8) { grid-column: span 5; }
+#portfolio.boytea-portfolio .portfolio-grid > .portfolio-item:nth-child(9n + 9) { grid-column: span 3; }
+}
+
+/* Resume와 Portfolio를 하나의 배경면으로 연결 */
+body.index-page .resume-portfolio-surface {
+  background-color: #efefed;
+  background-image: linear-gradient(rgba(255,255,255,.65), rgba(255,255,255,.65)),
+    url("../img/concrete_texture.png");
+  background-position: center top, center top;
+  background-size: auto, 960px auto;
+  background-repeat: no-repeat, repeat;
+}
+body.index-page .resume-portfolio-surface #resume.boytea-resume,
+body.index-page .resume-portfolio-surface #portfolio.portfolio.section.boytea-portfolio {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body.index-page .resume-portfolio-surface #resume::before,
+body.index-page .resume-portfolio-surface #resume::after,
+body.index-page .resume-portfolio-surface #portfolio::before,
+body.index-page .resume-portfolio-surface #portfolio::after {
+  content: none !important;
+}
+
+/* Portfolio card: subtle dark outline */
+body.index-page #portfolio .portfolio-card {
+  border: 1.5px solid rgba(0, 0, 0, 0.4);
+  border-radius: 7px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================
+   RESUME / PORTFOLIO 섹션 구분선
+========================================== */
+
+body.index-page #portfolio.boytea-portfolio {
+  position: relative;
+}
+
+/* RESUME / PORTFOLIO 구분선 */
+
+body.index-page #portfolio.boytea-portfolio::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute;
+
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: min(1240px, calc(100% - 40px));
+  height: 2px;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Portfolio 제목 아래 선을 점선으로 */
+body.index-page #portfolio .portfolio-heading-wrap {
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 기존 실선 가상 요소가 있다면 제거 */
+body.index-page #portfolio .portfolio-heading-wrap::after {
+  content: none !important;
+}
+
+
+/* ==========================================
+   PORTFOLIO 타이틀 & 필터 등장 애니메이션
+========================================== */
+
+@keyframes portfolioFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 애니메이션 시작 상태 */
+body.index-page #portfolio .portfolio-heading-wrap,
+body.index-page #portfolio .portfolio-filters {
+  opacity: 0;
+  transform: translateY(28px);
+}
+
+/* 화면에 들어오면 실행 */
+body.index-page #portfolio.portfolio-visible .portfolio-heading-wrap {
+  animation: portfolioFadeUp 0.85s ease forwards;
+}
+
+body.index-page #portfolio.portfolio-visible .portfolio-filters {
+  animation: portfolioFadeUp 0.85s ease 0.18s forwards;
+}
+
+/* 모션 최소화 설정 */
+@media (prefers-reduced-motion: reduce) {
+  body.index-page #portfolio .portfolio-heading-wrap,
+  body.index-page #portfolio .portfolio-filters {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+
+
+
+/* ==========================================
+   PORTFOLIO 제목 / 필터 스크롤 등장
+========================================== */
+
+/* 기본 상태는 보이도록 유지 */
+#portfolio .portfolio-heading-wrap,
+#portfolio .portfolio-filters {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* JS가 감지하기 전에는 아래쪽에서 대기 */
+#portfolio:not(.portfolio-visible) .portfolio-heading-wrap,
+#portfolio:not(.portfolio-visible) .portfolio-filters {
+  opacity: 0;
+  transform: translateY(35px);
+}
+
+/* 화면 진입 시 위로 떠오르며 등장 */
+#portfolio .portfolio-heading-wrap {
+  transition:
+    opacity 0.85s ease,
+    transform 0.85s cubic-bezier(.22, 1, .36, 1);
+}
+
+#portfolio .portfolio-filters {
+  transition:
+    opacity 0.85s ease 0.18s,
+    transform 0.85s cubic-bezier(.22, 1, .36, 1) 0.18s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #portfolio .portfolio-heading-wrap,
+  #portfolio .portfolio-filters {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ==========================================
+   PORTFOLIO → CONTACT 텍스처 페이드
+========================================== */
+
+/* 기존 배경은 유지하면서 하단만 흰색으로 전환 */
+body.index-page .resume-portfolio-surface {
+  position: relative;
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(255,255,255,.65) 0%,
+      rgba(255,255,255,.65) calc(100% - 220px),
+      rgba(255,255,255,.82) calc(100% - 110px),
+      rgba(255,255,255,1) 100%
+    ),
+    url("../img/concrete_texture.png");
+  background-size: auto, 960px auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center top;
+}
+
+/* ==========================================
+   CONTACT
+========================================== */
+
+body.index-page #contact.boytea-contact-simple {
+  background: #fff;
+  padding: 85px 0 100px;
+  color: #111;
+}
+
+#contact.boytea-contact-simple .contact-shell {
+  max-width: 1240px;
+}
+
+
+/* CONTACT 타이틀 — PORTFOLIO 타이틀과 통일 */
+
+#contact.boytea-contact-simple .contact-title {
+  font-family: "SUIT Variable", "SUIT", sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: #000;
+
+  margin: 0 0 55px;
+  padding-bottom: 15px;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.35);
+}
+
+
+#contact.boytea-contact-simple .contact-layout {
+  align-items: start;
+}
+
+#contact.boytea-contact-simple .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+#contact.boytea-contact-simple .contact-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+
+#contact.boytea-contact-simple .contact-info-label {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+
+  padding: 6px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  border-radius: 999px;
+
+  background: transparent;
+  color: #111;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
+
+#contact.boytea-contact-simple .contact-info-value {
+  font: 500 17px/1.5 "SUIT", sans-serif;
+  color: #333;
+  overflow-wrap: anywhere;
+}
+
+#contact.boytea-contact-simple .contact-info-value:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+/* 입력 폼 */
+#contact.boytea-contact-simple .contact-form {
+  height: auto;
+}
+
+#contact.boytea-contact-simple .contact-form .form-control {
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #fff;
+  color: #111;
+  padding: 13px 16px;
+  font-family: "SUIT", sans-serif;
+  font-size: 14px;
+  box-shadow: none;
+}
+
+#contact.boytea-contact-simple .contact-form .form-control:focus {
+  border-color: #111;
+  box-shadow: none;
+}
+
+#contact.boytea-contact-simple .contact-form textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* 버튼: 포트폴리오 필터와 통일 */
+#contact.boytea-contact-simple .contact-actions {
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+#contact.boytea-contact-simple .contact-btn {
+  border: 1px solid #111;
+  border-radius: 999px;
+  padding: 12px 25px;
+  min-width: 155px;
+  font: 700 12px/1.3 "SUIT", sans-serif;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+}
+
+#contact.boytea-contact-simple .contact-btn-primary {
+  background: #000;
+  color: #fff;
+}
+
+#contact.boytea-contact-simple .contact-btn-secondary {
+  background: #fff;
+  color: #111;
+}
+
+#contact.boytea-contact-simple .contact-btn-primary:hover {
+  background: #fff;
+  color: #111;
+}
+
+#contact.boytea-contact-simple .contact-btn-secondary:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ==========================================
+   FOOTER 중앙 정렬
+========================================== */
+
+body.index-page #footer.boytea-footer {
+  background: #fff;
+  border-top: 1px solid rgba(0,0,0,.25);
+  padding: 25px 20px;
+  text-align: center;
+}
+
+#footer.boytea-footer p {
+  margin: 0;
+  color: #555;
+  font: 600 11px/1.5 "SUIT", sans-serif;
+  letter-spacing: .04em;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  body.index-page #contact.boytea-contact-simple {
+    padding: 65px 0 70px;
+  }
+
+  #contact.boytea-contact-simple .contact-title {
+    font-size: 32px;
+    margin-bottom: 35px;
+  }
+
+  #contact.boytea-contact-simple .contact-info {
+    margin-bottom: 20px;
+  }
+
+  #contact.boytea-contact-simple .contact-actions {
+    flex-wrap: wrap;
+  }
+
+  #contact.boytea-contact-simple .contact-btn {
+    min-width: 0;
+    flex: 1;
+  }
+}
+
+
+/* ==========================================
+   VIDEO DETAILS — COMPACT VERSION
+========================================== */
+
+/* 전체 페이지 공통 콘크리트 텍스처 */
+body.detail-page {
+  font-family: "SUIT Variable", "SUIT", sans-serif;
+  color: #111;
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(rgba(255,255,255,.55), rgba(255,255,255,.55)),
+    url("assets/img/concrete_texture.png");
+  background-size: auto, 960px auto;
+  background-repeat: no-repeat, repeat;
+  background-position: center top;
+}
+
+/* 각 영역 배경 제거 → 텍스처 연결 */
+body.detail-page .detail-header,
+body.detail-page .detail-hero,
+body.detail-page .detail-content {
+  background: transparent !important;
+  background-image: none !important;
+}
+
+/* 헤더 */
+body.detail-page .detail-header-inner {
+  min-height: 76px;
+}
+
+/* 타이틀 영역 */
+body.detail-page .detail-hero {
+  color: #111;
+  padding: 42px 20px 20px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px dashed rgba(0,0,0,.4);
+  padding-bottom: 20px;
+}
+
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  font-family: "SUIT Variable", "SUIT", sans-serif;
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+  color: #000;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-back {
+  color: #111;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+body.detail-page .detail-back:hover {
+  text-decoration: underline;
+}
+
+/* 콘텐츠 여백 축소 */
+body.detail-page .detail-content {
+  padding: 25px 20px 55px;
+}
+
+body.detail-page .detail-grid {
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 30px;
+}
+
+/* 정보 카드 간결하게 */
+body.detail-page .detail-info {
+  padding: 22px 24px;
+  border: 1.5px solid rgba(0,0,0,.7);
+  border-radius: 8px;
+  background: rgba(255,255,255,.55);
+}
+
+body.detail-page .detail-info h2 {
+  font-family: "SUIT Variable", "SUIT", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+}
+
+body.detail-page .detail-info dt {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+body.detail-page .detail-info dd {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* 소개 영역 */
+body.detail-page .detail-description {
+  margin-top: 12px;
+  padding-top: 15px;
+}
+
+body.detail-page .detail-description h3 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+  margin-bottom: 8px;
+}
+
+body.detail-page .detail-description p {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* 영상 */
+body.detail-page .detail-media {
+  border-radius: 8px;
+}
+
+/* 하단 */
+body.detail-page .detail-footer {
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+  padding: 18px 15px;
+}
+
+/* 모바일 */
+@media (max-width: 767px) {
+  body.detail-page .detail-hero {
+    padding: 35px 20px 18px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-content {
+    padding-bottom: 40px;
+  }
+}
+
+/* =====================================
+   PORTFOLIO LIGHTBOX - 이미지 스크롤
+===================================== */
+
+/* 팝업 전체 */
+.glightbox-container .gslide-image {
+  max-height: 90vh !important;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  display: block !important;
+
+  scrollbar-width: thin;
+  scrollbar-color: #777 transparent;
+}
+
+/* 긴 이미지: 원본 비율 유지 */
+.glightbox-container .gslide-image img {
+  width: auto !important;
+  max-width: 100% !important;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
+}
+
+/* 스크롤바 */
+.glightbox-container .gslide-image::-webkit-scrollbar {
+  width: 6px;
+}
+
+.glightbox-container .gslide-image::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 10px;
 }

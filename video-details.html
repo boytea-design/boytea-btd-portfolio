@@ -1,168 +1,437 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Video Details - Lonely Bootstrap Template</title>
-  <meta name="description" content="">
-  <meta name="keywords" content="">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <title>Video Project | BOY TEA</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Lonely
-  * Template URL: https://bootstrapmade.com/free-html-bootstrap-template-lonely/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  
+<style>
+/* =========================================
+   VIDEO DETAILS — FINAL
+========================================= */
+
+:root {
+  --detail-width: 1144px;
+}
+
+/* 전체 페이지 */
+html {
+  min-height: 100%;
+  background: #f2f2f2;
+}
+
+body.detail-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  color: #111;
+
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.55)
+    ),
+    url("assets/img/concrete_texture.png");
+
+  background-size: auto, 960px auto;
+  background-position: center top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 공통 정렬 기준 */
+body.detail-page .detail-container,
+body.detail-page .detail-header-inner {
+  width: min(
+    var(--detail-width),
+    calc(100% - 40px)
+  );
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.detail-page .detail-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.detail-page .detail-header::before,
+body.detail-page .detail-header::after {
+  content: none;
+}
+
+body.detail-page .detail-header-inner {
+  min-height: 82px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.detail-page .detail-logo {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  margin-left: auto;
+}
+
+body.detail-page .detail-nav a {
+  display: inline-block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    font-weight .25s ease;
+}
+
+body.detail-page .detail-nav a:hover {
+  transform: translateY(-3px);
+  font-weight: 800;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+body.detail-page .detail-hero {
+  background: transparent;
+  color: #111;
+  padding: 30px 0 18px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(0,0,0,.45);
+}
+
+/* VIDEO PROJECT. */
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 돌아가기 */
+body.detail-page .detail-back {
+  flex-shrink: 0;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s ease;
+}
+
+body.detail-page .detail-back:hover {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+body.detail-page .detail-content {
+  flex: 1;
+  background: transparent;
+  padding: 20px 0 35px;
+}
+
+body.detail-page .detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* 영상 */
+body.detail-page .detail-media {
+  overflow: hidden;
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: #111;
+  align-self: start;
+}
+
+body.detail-page .detail-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+body.detail-page .detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+  min-height: 0;
+  padding: 20px 22px;
+
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: rgba(255,255,255,.35);
+  box-sizing: border-box;
+}
+
+body.detail-page .detail-info h2 {
+  margin: 0 0 15px;
+  padding-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+
+  border-bottom: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-info dl {
+  margin: 0;
+}
+
+body.detail-page .detail-info dt {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+body.detail-page .detail-info dd {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* 프로젝트 소개 */
+body.detail-page .detail-description {
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-description h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+}
+
+body.detail-page .detail-description p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+body.detail-page .detail-footer {
+  margin-top: auto;
+  padding: 20px 15px;
+
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  body.detail-page .detail-header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav {
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav a {
+    font-size: 13px;
+  }
+
+  body.detail-page .detail-hero {
+    padding-top: 25px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-info {
+    height: auto;
+  }
+
+  body.detail-page .detail-description {
+    margin-top: 15px;
+  }
+}
+</style>
+
 </head>
 
-<body class="portfolio-details-page">
+<body class="detail-page">
 
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+  <!-- HEADER -->
+  <header class="detail-header">
+    <div class="detail-header-inner">
 
-      <a href="index.html" class="logo d-flex align-items-center">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Lonely</h1>
+      <a href="index.html" class="detail-logo">
+        BOY TEA PORTFOLIO PROJECT
       </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html#hero">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-
-          <li><a href="index.html#portfolio">Portfolio</a></li>
-
-
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      <nav class="detail-nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#resume">Resume</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
       </nav>
 
     </div>
   </header>
 
-  <main class="main">
 
-    <!-- Page Title -->
-    <div class="page-title light-background">
-      <div class="container d-lg-flex justify-content-between align-items-center">
-        <h1 class="mb-2 mb-lg-0">Video Details</h1>
-        <nav class="breadcrumbs">
-          <ol>
-            <li><a href="index.html">Home</a></li>
-            <li class="current">Video Details</li>
-          </ol>
-        </nav>
-      </div>
-    </div><!-- End Page Title -->
 
-    <!-- Video Details Section -->
-    <section id="portfolio-details" class="portfolio-details section">
+<!-- HERO -->
+<section class="detail-hero">
+  <div class="detail-container">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <h1>VIDEO PROJECT.</h1>
 
-        <div class="row gy-4">
+    <a href="index.html#portfolio" class="detail-back">
+      ← BACK TO PORTFOLIO
+    </a>
 
-          <div class="col-lg-8">
-            <video class="w-100 rounded" controls playsinline preload="metadata" style="aspect-ratio: 16 / 9; background: #000;">
-              <!-- Replace this file with your MP4 video. -->
-              <source src="assets/video/video-sample.mp4" type="video/mp4">
-              Your browser does not support video playback.
-            </video>
-          </div>
+  </div>
+</section>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info" data-aos="fade-up" data-aos-delay="200">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Category</strong>: Video</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description" data-aos="fade-up" data-aos-delay="300">
-              <h2>Video Project</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Video Project non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-            </div>
-          </div>
 
+<!-- PROJECT CONTENT -->
+
+  <!-- PROJECT CONTENT -->
+  <main class="detail-content">
+    <div class="detail-container">
+
+      <div class="detail-grid">
+
+        <!-- 영상 -->
+        <div class="detail-media">
+          <video controls preload="metadata">
+            <source src="assets/video/sample.mp4" type="video/mp4">
+            브라우저가 영상을 지원하지 않습니다.
+          </video>
         </div>
 
+        <!-- 프로젝트 정보 -->
+
+<aside class="detail-info">
+  <h2>PROJECT INFORMATION</h2>
+
+  <dl>
+    <dt>CATEGORY</dt>
+    <dd>Video / Motion Graphics</dd>
+
+    <dt>PROJECT</dt>
+    <dd>프로젝트 제목 입력</dd>
+
+    <dt>ROLE</dt>
+    <dd>기획 · 촬영 · 편집</dd>
+
+    <dt>TOOLS</dt>
+    <dd>Premiere Pro · After Effects</dd>
+  </dl>
+
+  <div class="detail-description">
+    <h3>ABOUT PROJECT</h3>
+    <p>프로젝트의 기획 의도와 핵심 제작 내용을 간결하게 소개합니다.</p>
+  </div>
+</aside>
+
+
       </div>
 
-    </section><!-- /Video Details Section -->
-
+    </div>
   </main>
 
-  <footer id="footer" class="footer light-background">
-    <div class="container">
-      <h3 class="sitename">Lonely</h3>
-      <p>Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni eligendi fuga maxime saepe commodi placeat.</p>
-      <div class="social-links d-flex justify-content-center">
-        <a href=""><i class="bi bi-twitter-x"></i></a>
-        <a href=""><i class="bi bi-facebook"></i></a>
-        <a href=""><i class="bi bi-instagram"></i></a>
-        <a href=""><i class="bi bi-skype"></i></a>
-        <a href=""><i class="bi bi-linkedin"></i></a>
-      </div>
-      <div class="container">
-        <div class="copyright">
-          <span>Copyright</span> <strong class="px-1 sitename">Lonely</strong> <span>All Rights Reserved</span>
-        </div>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> | <a href="https://bootstrapmade.com/tools/">DevTools</a>
-        </div>
-      </div>
-    </div>
+  <!-- FOOTER -->
+  <footer class="detail-footer">
+    © 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
 </body>
-
 </html>

@@ -151,6 +151,33 @@
 
   });
 
+  /** Portfolio: filter CSS Grid cards without absolute positioning. */
+  document.querySelectorAll('#portfolio .boytea-filter-layout').forEach(function(layout) {
+    const cards = Array.from(layout.querySelectorAll('.portfolio-grid > .portfolio-item'));
+    const filters = Array.from(layout.querySelectorAll('.portfolio-filters li'));
+    function applyFilter(filter) {
+      let slot = 0;
+      cards.forEach(function(card) {
+        const visible = filter === '*' || card.matches(filter);
+        card.hidden = !visible;
+        if (visible) {
+          slot++;
+          card.dataset.gridSlot = String(((slot - 1) % 9) + 1);
+        } else {
+          delete card.dataset.gridSlot;
+        }
+      });
+    }
+    filters.forEach(function(button) {
+      button.addEventListener('click', function() {
+        filters.forEach(function(b) { b.classList.remove('filter-active'); });
+        button.classList.add('filter-active');
+        applyFilter(button.dataset.filter || '*');
+      });
+    });
+    applyFilter('*');
+  });
+
   /**
    * Init swiper sliders
    */
