@@ -1,0 +1,417 @@
+
+<!DOCTYPE html>
+
+<html lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>트렌드탐정 루카 | BOY TEA PORTFOLIO</title>
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/css/main.css" rel="stylesheet"/>
+<style>
+/* =========================================
+   VIDEO DETAILS — FINAL
+========================================= */
+
+:root {
+  --detail-width: 1144px;
+}
+
+/* 전체 페이지 */
+html {
+  min-height: 100%;
+  background: #f2f2f2;
+}
+
+body.detail-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  color: #111;
+
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.55)
+    ),
+    url("assets/img/concrete_texture.png");
+
+  background-size: auto, 960px auto;
+  background-position: center top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 공통 정렬 기준 */
+body.detail-page .detail-container,
+body.detail-page .detail-header-inner {
+  width: min(
+    var(--detail-width),
+    calc(100% - 40px)
+  );
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.detail-page .detail-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.detail-page .detail-header::before,
+body.detail-page .detail-header::after {
+  content: none;
+}
+
+body.detail-page .detail-header-inner {
+  min-height: 82px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.detail-page .detail-logo {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  margin-left: auto;
+}
+
+body.detail-page .detail-nav a {
+  display: inline-block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    font-weight .25s ease;
+}
+
+body.detail-page .detail-nav a:hover {
+  transform: translateY(-3px);
+  font-weight: 800;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+body.detail-page .detail-hero {
+  background: transparent;
+  color: #111;
+  padding: 30px 0 18px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(0,0,0,.45);
+}
+
+/* FIGMA PROJECT. */
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 돌아가기 */
+body.detail-page .detail-back {
+  flex-shrink: 0;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s ease;
+}
+
+body.detail-page .detail-back:hover {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+/* FIGMA detail: video page styling retained, horizontal info and image below */
+body.detail-page .detail-content { flex:1; background:transparent; padding:20px 0 35px; }
+body.detail-page .figma-info { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; border:1px solid rgba(0,0,0,.55); border-radius:8px; padding:18px 22px; background:rgba(255,255,255,.25); }
+body.detail-page .figma-info .info-label { font-size:11px; font-weight:800; margin:0 0 7px; }
+body.detail-page .figma-info .info-value { font-size:13px; font-weight:500; margin:0; line-height:1.55; overflow-wrap:anywhere; }
+body.detail-page .figma-artwork { margin:26px 0 0; text-align:center; }
+body.detail-page .figma-artwork img { display:block; width:100%; height:auto; max-width:100%; }
+body.detail-page .goldenchou-artwork { padding:0; }
+body.detail-page .goldenchou-artwork img { margin:0; border:0; }
+@media (max-width: 1100px) { body.detail-page .detail-hero h1 { white-space:normal; } }
+@media(max-width:767px) { body.detail-page .figma-info {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;} }
+
+body.detail-page .detail-footer {
+  margin-top: auto;
+  padding: 20px 15px;
+
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  body.detail-page .detail-header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav {
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav a {
+    font-size: 13px;
+  }
+
+  body.detail-page .detail-hero {
+    padding-top: 25px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-info {
+    height: auto;
+  }
+
+  body.detail-page .detail-description {
+    margin-top: 15px;
+  }
+}
+
+/* GOLDENCHOU — user-controlled gallery (normal page scrolling) */
+body.detail-page .figma-info .info-value {line-height:1.6;}
+body.detail-page .detail-content {padding-bottom:35px;}
+.gc-scroll {padding:0!important;margin:26px auto 0;background:transparent!important;overflow:hidden!important;width:100%;}
+.gc-sticky {position:relative;height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;overflow:hidden;padding:10px 0 20px;}
+.gc-stage {width:100%;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;}
+.gc-stage.is-dragging {cursor:grabbing;}
+.gc-track {display:flex;align-items:center;gap:28px;transform:translate3d(0,0,0);transition:transform .48s cubic-bezier(.22,.68,0,1);}
+.gc-stage.is-dragging .gc-track {transition:none;}
+.gc-slide {flex:0 0 auto;width:min(72vw,1050px);display:flex;justify-content:center;align-items:center;opacity:.28;filter:brightness(.55);transform:scale(.91);transition:opacity .35s ease,filter .35s ease,transform .35s ease;}
+.gc-slide.is-active {opacity:1;filter:brightness(1);transform:scale(1);}
+.gc-slide img {display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;box-shadow:0 18px 50px rgba(0,0,0,.15);pointer-events:none;}
+.gc-controls {width:min(1144px,calc(100% - 40px));margin:16px auto 0;display:flex;align-items:center;gap:15px;color:#111;font-size:12px;font-weight:700;}
+.gc-hint {letter-spacing:.05em;color:#444;}
+.gc-nav {width:40px;height:40px;border:1px solid #222;border-radius:6px;background:rgba(255,255,255,.5);color:#111;font-size:22px;line-height:1;cursor:pointer;transition:background .2s;}
+.gc-nav:hover:not(:disabled){background:#111;color:#fff;}
+.gc-nav:disabled {opacity:.25;cursor:default;}
+.gc-count {white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums;}
+.gc-count strong {font-size:19px;}
+.gc-progress {height:3px;width:120px;background:rgba(0,0,0,.17);}
+.gc-progress-fill {height:100%;width:0;background:#111;transition:width .35s ease;}
+@media(max-width:767px){.gc-slide{width:88vw}.gc-slide img{max-height:68vh}.gc-track{gap:14px}.gc-hint{font-size:10px}.gc-controls{gap:8px}.gc-progress{width:50px}.gc-nav{width:36px;height:36px}body.detail-page .detail-hero h1{font-size:clamp(24px,6vw,36px);white-space:normal}}
+@media(prefers-reduced-motion:reduce){.gc-track,.gc-slide,.gc-progress-fill{transition:none}}
+
+/* DARK THEME — gallery images remain unmodified */
+html {background:#090a0c;}
+body.detail-page {
+  color:#f3f3f3;
+  background-color:#090a0c;
+  background-image:linear-gradient(rgba(0,0,0,.84),rgba(0,0,0,.84)),url("assets/img/concrete_texture.png");
+  background-size:auto,960px auto;
+  background-position:center top;
+  background-repeat:no-repeat,repeat;
+}
+body.detail-page .detail-logo,
+body.detail-page .detail-nav a,
+body.detail-page .detail-hero,
+body.detail-page .detail-hero h1,
+body.detail-page .detail-back,
+body.detail-page .detail-footer {color:#f5f5f5;}
+body.detail-page .detail-hero .detail-container {border-bottom-color:rgba(255,255,255,.38);}
+body.detail-page .figma-info {border-color:rgba(255,255,255,.45);background:rgba(0,0,0,.22);}
+body.detail-page .figma-info .info-label {color:#e7e7e7;}
+body.detail-page .figma-info .info-value {color:#f4f4f4;}
+body.detail-page .detail-footer {border-top-color:rgba(255,255,255,.22);}
+.gc-controls {color:#fff;}
+.gc-hint {color:#c8c8c8;}
+.gc-nav {background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.65);color:#fff;}
+.gc-nav:hover:not(:disabled) {background:#fff;color:#111;}
+.gc-progress {background:rgba(255,255,255,.24);}
+.gc-progress-fill {background:#fff;}
+
+/* Detail pages: back to top */
+body.detail-page .detail-scroll-top {
+  position: fixed; right: 24px; bottom: 24px; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; padding: 0;
+  border: 1px solid rgba(255,255,255,.65); border-radius: 6px;
+  background: rgba(9,10,12,.94); color: #fff;
+  font-size: 20px; line-height: 1; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+body.detail-page .detail-scroll-top.is-visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+body.detail-page .detail-scroll-top:hover {background: #fff; color: #111;}
+@media (max-width: 767px) {
+  body.detail-page .detail-scroll-top {right: 16px; bottom: 16px; width: 42px; height: 42px;}
+}
+</style>
+<style>body.detail-page .gc-scroll{margin-top:24px!important}body.detail-page .gc-slide{width:min(58vw,900px)}body.detail-page .gc-slide img{max-height:70vh;object-fit:contain}body.detail-page .gc-controls{width:min(1144px,calc(100% - 40px))}@media(max-width:767px){body.detail-page .gc-slide{width:84vw}body.detail-page .gc-slide img{max-height:62vh}}</style></head>
+<body class="detail-page">
+<!-- HEADER -->
+<header class="detail-header">
+<div class="detail-header-inner">
+<a class="detail-logo" href="index.html">
+        BOY TEA PORTFOLIO PROJECT
+      </a>
+<nav class="detail-nav">
+<a href="index.html#hero">Home</a>
+<a href="index.html#about">About</a>
+<a href="index.html#resume">Resume</a>
+<a href="index.html#portfolio">Portfolio</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+</div>
+</header>
+<!-- HERO -->
+<section class="detail-hero">
+<div class="detail-container">
+<h1>CHARACTER IP PROJECT.</h1>
+<a class="detail-back" href="index.html#portfolio">
+      ← BACK TO PORTFOLIO
+    </a>
+</div>
+</section>
+<!-- PROJECT CONTENT -->
+<main class="detail-content">
+<div class="detail-container">
+<section aria-label="프로젝트 정보" class="figma-info">
+<div><p class="info-label">PROJECT</p><p class="info-value">트렌드탐정 루카 (TREND DETECTIVE LUCA)</p></div>
+<div><p class="info-label">CATEGORY</p><p class="info-value">Character IP · Character Guide</p></div>
+<div><p class="info-label">ROLE</p><p class="info-value">캐릭터 리디자인 · 가이드라인 제작</p></div>
+<div><p class="info-label">TOOLS</p><p class="info-value">Adobe Illustrator · Adobe Photoshop</p></div>
+</section>
+</div>
+<div class="detail-container">
+</div>
+<section aria-label="트렌드탐정 루카 가이드북 좌우 넘김" class="gc-scroll">
+<div class="gc-sticky">
+<div aria-label="드래그 또는 좌우 방향키로 넘기세요" class="gc-stage" tabindex="0">
+<div class="gc-track"><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 01페이지" decoding="async" loading="eager" src="assets/img/luca/page-02.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 02페이지" decoding="async" loading="eager" src="assets/img/luca/page-04.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 03페이지" decoding="async" loading="lazy" src="assets/img/luca/page-05.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 04페이지" decoding="async" loading="lazy" src="assets/img/luca/page-06.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 05페이지" decoding="async" loading="lazy" src="assets/img/luca/page-08.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 06페이지" decoding="async" loading="lazy" src="assets/img/luca/page-09.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 07페이지" decoding="async" loading="lazy" src="assets/img/luca/page-10.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 08페이지" decoding="async" loading="lazy" src="assets/img/luca/page-12.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 09페이지" decoding="async" loading="lazy" src="assets/img/luca/page-13.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 10페이지" decoding="async" loading="lazy" src="assets/img/luca/page-14.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 11페이지" decoding="async" loading="lazy" src="assets/img/luca/page-16.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 12페이지" decoding="async" loading="lazy" src="assets/img/luca/page-17.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 13페이지" decoding="async" loading="lazy" src="assets/img/luca/page-18.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 14페이지" decoding="async" loading="lazy" src="assets/img/luca/page-19.jpg"/></div><div class="gc-slide"><img alt="트렌드탐정 루카 가이드북 15페이지" decoding="async" loading="lazy" src="assets/img/luca/page-20.jpg"/></div></div>
+</div>
+<div class="gc-controls"><button aria-label="이전 페이지" class="gc-nav gc-prev" type="button">←</button><button aria-label="다음 페이지" class="gc-nav gc-next" type="button">→</button><span class="gc-hint">DRAG OR USE ARROWS</span><span class="gc-count"><strong id="gc-current">01</strong> / 15</span><div class="gc-progress"><div class="gc-progress-fill"></div></div></div>
+</div>
+</section></main>
+<!-- FOOTER -->
+<footer class="detail-footer">
+    © 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.
+  </footer>
+<!-- Detail page: scroll to top -->
+<button aria-label="맨 위로 이동" class="detail-scroll-top" id="detailScrollTop" type="button">▲</button>
+<script>
+(function () {
+  const button = document.getElementById('detailScrollTop');
+  if (!button) return;
+  function update() {
+    button.classList.toggle('is-visible', window.scrollY > 300);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('pageshow', update);
+  update();
+  button.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+<script>
+(function(){
+ const stage=document.querySelector('.gc-stage');
+ const track=document.querySelector('.gc-track');
+ if(!stage||!track)return;
+ const slides=Array.from(track.querySelectorAll('.gc-slide'));
+ const prev=document.querySelector('.gc-prev'),next=document.querySelector('.gc-next');
+ const current=document.getElementById('gc-current'),fill=document.querySelector('.gc-progress-fill');
+ let index=0,startX=null,startY=null,dragging=false;
+ function render(){
+  const slide=slides[index];
+  track.style.transform='translate3d('+(stage.clientWidth/2-slide.offsetLeft-slide.offsetWidth/2)+'px,0,0)';
+  slides.forEach((el,i)=>{el.classList.toggle('is-active',i===index);el.setAttribute('aria-hidden',i!==index?'true':'false')});
+  current.textContent=String(index+1).padStart(2,'0');
+  fill.style.width=(index/(slides.length-1)*100)+'%';
+  prev.disabled=index===0;next.disabled=index===slides.length-1;
+ }
+ function go(n){index=Math.max(0,Math.min(slides.length-1,n));render();}
+ prev.addEventListener('click',()=>go(index-1));
+ next.addEventListener('click',()=>go(index+1));
+ stage.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();go(index+(e.key==='ArrowRight'?1:-1));}});
+ stage.addEventListener('pointerdown',e=>{if(e.button!==0)return;startX=e.clientX;startY=e.clientY;dragging=true;stage.classList.add('is-dragging');});
+ stage.addEventListener('pointerup',e=>{if(!dragging)return;const dx=e.clientX-startX,dy=e.clientY-startY;dragging=false;stage.classList.remove('is-dragging');if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))go(index+(dx<0?1:-1));});
+ stage.addEventListener('pointercancel',()=>{dragging=false;stage.classList.remove('is-dragging');});
+ window.addEventListener('resize',render);
+ window.addEventListener('load',render);
+ render();
+})();
+</script></body>
+</html>

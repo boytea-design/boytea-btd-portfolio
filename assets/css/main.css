@@ -3035,3 +3035,300 @@ body.detail-page .detail-footer {
 .design-scroll-close{position:fixed;top:12px;right:20px;z-index:1;color:white;background:transparent;border:0;font:300 42px/1 Arial,sans-serif;cursor:pointer;}
 body.design-modal-open{overflow:hidden;}
 @media(max-width:767px){.design-scroll-modal{padding:55px 12px 15px}.design-scroll-viewport{height:calc(100dvh - 70px)}.design-scroll-close{top:8px;right:14px}}
+
+
+/* =========================================================
+   2026-10-19 MOBILE REFINEMENT — desktop layout untouched
+   ========================================================= */
+@media (max-width: 1199px) {
+  body.index-page #header .mobile-nav-toggle {
+    position: relative; z-index: 10000;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 36px; height: 36px; margin: 0;
+    font-size: 29px; line-height: 1; color: #111;
+    cursor: pointer;
+  }
+  body.index-page.mobile-nav-active #header .mobile-nav-toggle {
+    position: fixed; top: 22px; right: 22px; color: #fff;
+    margin: 0; font-size: 30px;
+  }
+  body.index-page.mobile-nav-active #header .navmenu {
+    background: rgba(0,0,0,.94);
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul {
+    display: flex; flex-direction: column; align-items: stretch;
+    position: fixed; inset: 75px 22px 24px;
+    background: transparent; box-shadow: none; border-radius: 0;
+    padding: 12px 0; margin: 0; overflow-y: auto;
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li {
+    border-bottom: 1px solid rgba(255,255,255,.25);
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a,
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a:focus {
+    padding: 18px 2px; font-size: clamp(22px, 5vw, 30px);
+    font-weight: 650; color: #fff; letter-spacing: -.025em;
+    background: transparent;
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a.active,
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a:hover { color: #d0d0d0; }
+}
+@media (max-width: 767px) {
+  body.index-page #header { padding: 16px 0 12px; }
+  body.index-page #header .header-project-name {
+    font-size: clamp(14px, 3.8vw, 18px); font-weight: 500;
+    letter-spacing: -.05em;
+  }
+  body.index-page #header .container-fluid { gap: 10px; }
+  body.index-page #hero.hero {
+    min-height: calc(100svh - 64px); padding: 70px 0 86px;
+    display: flex; align-items: stretch;
+  }
+  body.index-page #hero.hero .hero-layout {
+    width: 100%; max-width: none; padding: 0 22px;
+    min-height: calc(100svh - 220px);
+  }
+  body.index-page #hero.hero .hero-main {
+    width: 100%; flex: 1; min-width: 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    gap: 22px; transform: none;
+  }
+  body.index-page #hero.hero .hero-title-group {
+    width: 100%; max-width: none; min-width: 0;
+    align-items: flex-start;
+  }
+  body.index-page #hero.hero p.hero-top-text {
+    width: 100%; font-size: clamp(13px, 3.8vw, 16px);
+    line-height: 1.5; letter-spacing: -.035em;
+    margin: 0 0 16px; word-break: keep-all;
+  }
+  body.index-page #hero.hero h1.hero-title {
+    width: 100%; max-width: none; line-height: 0;
+  }
+  body.index-page #hero.hero img.hero-title-img {
+    position: static !important; width: 100% !important;
+    max-width: 100% !important; height: auto !important;
+    object-fit: contain !important;
+  }
+  body.index-page #hero.hero p.hero-side-text {
+    width: 100%; flex-shrink: 1;
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: .17em; white-space: normal;
+    overflow-wrap: normal; word-break: keep-all;
+    margin: 0;
+  }
+  body.index-page #hero.hero .hero-footer {
+    width: 100%; gap: 12px; align-items: flex-end;
+    position: relative; top: 0; flex-wrap: wrap;
+  }
+  body.index-page #hero.hero .hero-info { flex: 1 1 170px; min-width: 0; }
+  body.index-page #hero.hero .hero-info-small {
+    font-size: 9px; letter-spacing: .09em; line-height: 1.5;
+    overflow-wrap: normal; word-break: keep-all;
+  }
+  body.index-page #hero.hero .hero-info-main {
+    font-size: 10px; letter-spacing: .1em; line-height: 1.5;
+  }
+  body.index-page #hero.hero .hero-scroll { flex-shrink: 0; font-size: 10px; }
+  body.index-page #about.about-section .left,
+  body.index-page #about.about-section .intro,
+  body.index-page #about.about-section .description { min-width: 0; max-width: 100%; }
+  body.index-page #about.about-section .description {
+    width: 100%; font-size: clamp(13px, 3.5vw, 15px);
+    line-height: 1.85; letter-spacing: -.035em;
+    word-break: keep-all; overflow-wrap: break-word;
+    text-align: left;
+  }
+  body.index-page #about.about-section .description .desktop-break { display: none; }
+  body.index-page #about.about-section .footnote {
+    max-width: 100%; line-height: 1.7;
+    word-break: keep-all; overflow-wrap: break-word;
+  }
+  #resume.boytea-resume .resume-tools {
+    display: grid; grid-template-columns: repeat(2, minmax(0,1fr));
+    column-gap: 12px; row-gap: 12px; margin: 0;
+    font-size: 13px; line-height: 1.45;
+  }
+  #resume.boytea-resume .resume-tools > span {
+    display: block; min-width: 0; padding-left: 12px;
+    position: relative; word-break: keep-all;
+  }
+  #resume.boytea-resume .resume-tools > span::before {
+    content: '·'; position: absolute; left: 0;
+  }
+}
+@media (max-width: 380px) {
+  body.index-page #hero.hero .hero-layout { padding-inline: 18px; }
+  body.index-page #hero.hero .hero-footer { align-items: flex-start; }
+  #resume.boytea-resume .resume-tools { column-gap: 8px; font-size: 12px; }
+}
+
+
+/* 2026-10-19 tablet tools + menu interaction refinements */
+/* Disable legacy template spinner on every viewport. */
+body.index-page #preloader { display: none !important; }
+
+/* Tablet and phone: individual labels and visible middle-dot bullets. */
+@media (max-width: 1199px) {
+  body.index-page #resume.boytea-resume .resume-tools {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 16px;
+    margin: 0;
+    font-size: clamp(12px, 1.65vw, 14px);
+    line-height: 1.55;
+  }
+  body.index-page #resume.boytea-resume .resume-tools > span {
+    position: relative;
+    display: block;
+    min-width: 0;
+    padding-left: 12px;
+    overflow-wrap: normal;
+    word-break: keep-all;
+  }
+  body.index-page #resume.boytea-resume .resume-tools > span::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: 700;
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a {
+    transform-origin: left center;
+    transition: transform .22s ease, color .22s ease, letter-spacing .22s ease;
+    will-change: transform;
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a:hover,
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a:focus-visible {
+    transform: translateY(-3px) scale(1.035);
+    color: #fff;
+  }
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a:active {
+    transform: translateY(-4px) scale(1.055);
+    color: #fff;
+  }
+}
+@media (max-width: 575px) {
+  body.index-page #resume.boytea-resume .resume-tools {
+    gap: 10px 12px;
+    font-size: 12px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  body.index-page.mobile-nav-active #header .navmenu > ul > li > a { transition: none; }
+}
+
+/* v3 — Tools separators on desktop; preserve tablet/mobile grid */
+@media (min-width: 1200px) {
+  body.index-page #resume.boytea-resume .resume-tools {
+    display: flex; flex-wrap: wrap; align-items: baseline;
+    gap: 4px 15px; margin: -11px 0 0; line-height: 2.2;
+  }
+  body.index-page #resume.boytea-resume .resume-tools > span {
+    display: inline-block; position: relative; padding-left: 12px;
+    white-space: nowrap;
+  }
+  body.index-page #resume.boytea-resume .resume-tools > span::before {
+    content: "·"; position: absolute; left: 0; top: 0; font-weight: 700;
+  }
+}
+
+
+/* ABOUT heading — FightingGyeongnam (투혼), desktop + mobile */
+@font-face {
+  font-family: 'FightingGyeongnam';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607131603@gfcredspirit-black/gfcredspirit-black/GFCRedSpirit-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'FightingGyeongnam';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607131603@gfcredspirit-black/gfcredspirit-black/GFCRedSpirit-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'FightingGyeongnam';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/2607131603@gfcredspirit-black/gfcredspirit-black/GFCRedSpirit-Black.woff2') format('woff2');
+  font-weight: 900;
+  font-display: swap;
+}
+body.index-page #about.about-section .intro h1 {
+  font-family: 'FightingGyeongnam', 'SUIT Variable', sans-serif;
+  font-weight: 900;
+}
+
+
+/* 골든슈 스마트폰 케이스 카드 SMALL 고정 */
+@media (min-width: 992px) {
+  #portfolio.boytea-portfolio
+  .portfolio-grid > .portfolio-item.portfolio-size-small:has(
+    img[src*="Thum_D04.jpg"]
+  ) {
+    grid-column: span 3 !important;
+  }
+}
+
+
+/* 디자인 상세 이미지 팝업 크기 축소 */
+@media (min-width: 768px) {
+  .design-scroll-viewport {
+    width: min(100%, 850px);
+  }
+}
+
+
+/* PORTFOLIO WORK MODE */
+body.portfolio-edit-mode
+#portfolio.boytea-portfolio .portfolio-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+
+body.portfolio-edit-mode
+#portfolio.boytea-portfolio
+.portfolio-grid > .portfolio-item {
+  grid-column: auto !important;
+}
+
+body.portfolio-edit-mode
+#portfolio.boytea-portfolio
+.portfolio-grid > .portfolio-item > .portfolio-card {
+  width: 100% !important;
+  height: 300px !important;
+}
+/* Resume Tools: explicit rows, matching left edge and separators */
+body.index-page #resume.boytea-resume .resume-tools {
+  display: block !important;
+  margin: -11px 0 0 !important;
+  font-size: 14px;
+  line-height: 2.2;
+}
+body.index-page #resume.boytea-resume .resume-tools > .tools-row {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: 15px;
+  row-gap: 0;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+body.index-page #resume.boytea-resume .resume-tools > .tools-row > span {
+  display: inline-block !important;
+  position: relative;
+  padding-left: 12px !important;
+  margin: 0 !important;
+  white-space: nowrap;
+}
+body.index-page #resume.boytea-resume .resume-tools > .tools-row > span::before {
+  content: "·" !important;
+  display: block !important;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 700;
+}
+@media (max-width: 1199px) {
+  body.index-page #resume.boytea-resume .resume-tools { margin: 0 !important; font-size: 13px; line-height: 1.55; }
+  body.index-page #resume.boytea-resume .resume-tools > .tools-row { column-gap: 12px; row-gap: 8px; }
+}

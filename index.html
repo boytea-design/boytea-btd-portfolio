@@ -1,405 +1,437 @@
 <!DOCTYPE html>
+
 <html lang="ko">
-
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - Boy Tea Bootstrap Template</title>
-  <meta name="author" content="곽종">
-  <meta name="description" content="안녕하세요. 디자인 영상 전문입니다....">
-  <meta name="keywords" content="포트폴리오, html, css, 영상">
-  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Index - Boy Tea Bootstrap Template</title>
+<meta content="곽종" name="author"/>
+<meta content="안녕하세요. 디자인 영상 전문입니다...." name="description"/>
+<meta content="포트폴리오, html, css, 영상" name="keywords"/>
+<meta content="noindex, nofollow" name="robots"/>
+<!-- Favicons -->
+<link href="assets/img/favicon-32x32.png" rel="icon"/>
+<link href="assets/img/favicon-32x32.png" rel="apple-touch-icon"/>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Vendor CSS Files -->
+<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<link href="assets/vendor/aos/aos.css" rel="stylesheet"/>
+<link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet"/>
+<link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet"/>
+<!-- Main CSS File -->
+<link href="assets/css/main.css" rel="stylesheet"/>
+<link href="assets/css/about-section.css" rel="stylesheet"/>
+<style id="portfolio-grid-layout-fix">
 
-  <!-- Favicons -->
-  <link href="assets/img/favicon-32x32.png" rel="icon">
-  <link href="assets/img/favicon-32x32.png" rel="apple-touch-icon">
+/* Portfolio grid consistency fix: preserve equal-size three-column edit layout. */
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  align-items: stretch !important;
+}
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item,
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item[data-grid-slot] {
+  position: relative !important;
+  inset: auto !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+  grid-column: auto !important;
+  grid-row: auto !important;
+  width: auto !important;
+  max-width: none !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item > .portfolio-card {
+  width: 100% !important;
+  height: 300px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  overflow: hidden;
+}
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item .portfolio-thumbnail {height: 100% !important;}
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item .portfolio-thumbnail img {width: 100% !important; height: 100% !important; object-fit: cover !important;}
+body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row > .portfolio-item[hidden] {display: none !important;}
+@media (min-width: 768px) and (max-width: 991px) {
+  body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row {grid-template-columns: repeat(2, minmax(0, 1fr)) !important;}
+}
+@media (max-width: 767px) {
+  body.portfolio-edit-mode #portfolio.boytea-portfolio .portfolio-grid.row {grid-template-columns: minmax(0, 1fr) !important; gap: 18px !important;}
+}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link href="assets/css/about-section.css" rel="stylesheet">
-
-  
+/* Category buttons: fit Korean label length without fixed-width boxes. */
+#portfolio .portfolio-filters {display:flex;flex-wrap:wrap;align-items:center;gap:10px;}
+#portfolio .portfolio-filters li {width:auto !important;min-width:0 !important;max-width:none !important;flex:0 0 auto !important;box-sizing:border-box;white-space:nowrap;padding:9px 20px !important;margin:0 !important;text-align:center;}
+#portfolio .portfolio-filters li:first-child {min-width:76px !important;}
+@media (max-width:767px) {#portfolio .portfolio-filters {gap:8px;}#portfolio .portfolio-filters li {padding:8px 14px !important;}}
+</style>
 </head>
-
-<body class="index-page">
-
-  <header id="header" class="header d-flex align-items-center sticky-top">
-    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center">
-        <h4 class="header-project-name">BOY TEA PORTFOLIO PROJECT</h4>
-      </a>
-
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-view-list"></i>
-      </nav>
-
-    </div>
-  </header>
-
-  <main class="main">
-
-  <!-- Hero Section -->
-<section id="hero" class="hero section">
-
-  <div class="container hero-layout">
-
-    <!-- 중앙 메인 콘텐츠 -->
-    <div class="hero-main">
-
-      <div class="hero-title-group">
-
-        <p class="hero-top-text">
+<body class="index-page portfolio-edit-mode">
+<header class="header d-flex align-items-center sticky-top" id="header">
+<div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+<a class="logo d-flex align-items-center" href="index.html">
+<h4 class="header-project-name">BOY TEA PORTFOLIO PROJECT</h4>
+</a>
+<nav class="navmenu" id="navmenu">
+<ul>
+<li><a class="active" href="#hero">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#resume">Resume</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+<i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+</nav>
+</div>
+</header>
+<main class="main">
+<!-- Hero Section -->
+<section class="hero section" id="hero">
+<div class="container hero-layout">
+<!-- 중앙 메인 콘텐츠 -->
+<div class="hero-main">
+<div class="hero-title-group">
+<p class="hero-top-text">
           미사여구보다 결과물로 증명하겠습니다.
         </p>
-
-        <h1 class="hero-title">
-          <img
-            src="assets/img/실전압축 포트폴리오_Title.svg"
-            alt="실전압축 포트폴리오"
-            class="hero-title-img"
-          >
-        </h1>
-
-      </div>
-
-      <!-- 중앙 우측 영문 -->
-      <p class="hero-side-text">
+<h1 class="hero-title">
+<img alt="실전압축 포트폴리오" class="hero-title-img" src="assets/img/실전압축 포트폴리오_Title.svg"/>
+</h1>
+</div>
+<!-- 중앙 우측 영문 -->
+<p class="hero-side-text">
         BATTLE-TESTED DESIGN
       </p>
-
-    </div>
-
-    <!-- 하단 정보 -->
-    <div class="hero-footer">
-
-      <div class="hero-info">
-        <p class="hero-info-small">
+</div>
+<!-- 하단 정보 -->
+<div class="hero-footer">
+<div class="hero-info">
+<p class="hero-info-small">
           GRAPHIC DESIGN / VISUAL COMMUNICATION
         </p>
-        <p class="hero-info-main">
+<p class="hero-info-main">
           SELECTED WORKS 2020—2026
         </p>
-      </div>
-
-      <a href="#about" class="hero-scroll">
+</div>
+<a class="hero-scroll" href="#about">
         SCROLL TO EXPLORE
         <span aria-hidden="true">▶</span>
-      </a>
-
-    </div>
-
-  </div>
-
+</a>
+</div>
+</div>
 </section>
 <!-- /Hero Section -->
-
-    
-  <!-- About Section -->
-  <section id="about" class="about-section">
-    <div class="about-layout">
-      <div class="left" aria-label="자기소개" data-about-reveal>
-        <div class="eyebrow">About me</div>
-        <div class="intro">
-          <p class="lead">특별한 말보다</p>
-          <h1>꾸준히 쌓은 결과로.</h1>
-          <div class="vertical-line" aria-hidden="true"></div>
-          <p class="description">
-            캐릭터 디자인부터 브랜딩, 굿즈와 패키지까지. 모진 수정과 방향 변경 속에서도<br class="desktop-break">
+<!-- About Section -->
+<section class="about-section" id="about">
+<div class="about-layout">
+<div aria-label="자기소개" class="left" data-about-reveal="">
+<div class="eyebrow">About me</div>
+<div class="intro">
+<p class="lead">특별한 말보다</p>
+<h1>꾸준히 쌓은 결과로.</h1>
+<div aria-hidden="true" class="vertical-line"></div>
+<p class="description">
+            캐릭터 디자인부터 브랜딩, 굿즈와 패키지까지. 모진 수정과 방향 변경 속에서도<br class="desktop-break"/>
             결과물을 완성해 왔습니다. 갖은 미사여구보다 실무 작업물로 보여드리겠습니다.
           </p>
-        </div>
-        <p class="footnote">* 본 페이지의 모든 작업물은 기획·최종 제작까지 지원자 단독으로 진행하였습니다.</p>
-      </div>
-      <div class="cards" aria-label="핵심 역량" data-about-reveal>
-        <a class="about-card" href="#portfolio"
-           aria-label="DESIGN: 그래픽 · 캐릭터 · 브랜딩">
-          <img class="about-card-photo" src="assets/img/aboutme_imege-01.png" alt="" loading="lazy" decoding="async">
-          <span class="card-content">
-            <span class="card-title">DESIGN</span>
-            <span class="card-subtitle">그래픽 · 캐릭터 · 브랜딩</span>
-            <span class="card-detail">다양한 매체를 넘나드는<br>실무 디자인 역량</span>
-          </span>
-        </a>
-        <a class="about-card" href="#portfolio"
-           aria-label="ADAPT: 수정 대응 · 방향 전환">
-          <img class="about-card-photo" src="assets/img/aboutme_imege-02.png" alt="" loading="lazy" decoding="async">
-          <span class="card-content">
-            <span class="card-title">ADAPT</span>
-            <span class="card-subtitle">수정 대응 · 방향 전환</span>
-            <span class="card-detail">변화하는 요구에 맞춰<br>유연하게 대응합니다</span>
-          </span>
-        </a>
-        <a class="about-card" href="#portfolio"
-           aria-label="COMM: 클라이언트 협업">
-          <img class="about-card-photo" src="assets/img/aboutme_imege-03.png" alt="" loading="lazy" decoding="async">
-          <span class="card-content">
-            <span class="card-title">COMM</span>
-            <span class="card-subtitle">클라이언트 협업</span>
-            <span class="card-detail">의도를 파악하고 조율해<br>결과로 연결합니다</span>
-          </span>
-        </a>
-        <a class="about-card" href="#portfolio"
-           aria-label="RESP: 기획부터 최종 납품까지">
-          <img class="about-card-photo" src="assets/img/aboutme_imege-04.png" alt="" loading="lazy" decoding="async">
-          <span class="card-content">
-            <span class="card-title">RESP</span>
-            <span class="card-subtitle">기획부터 최종 납품까지</span>
-            <span class="card-detail">시작부터 마무리까지<br>책임 있게 완수합니다</span>
-          </span>
-        </a>
-      </div>
-    </div>
-  </section><!-- /About Section -->
-    <div class="resume-portfolio-surface">
-    <!-- Resume Section -->
-    <section id="resume" class="resume section boytea-resume" aria-labelledby="resume-heading">
-      <div class="resume-layout">
-        <h2 id="resume-heading" class="resume-page-heading">Resume</h2>
-        <div class="resume-columns">
-          <div class="resume-column">
-            <h3 class="resume-group-title">Experience</h3>
-            <article class="resume-entry">
-              <div class="resume-entry-head"><h4>통로이미지</h4><p>2024.03 ~ 재직중 | 프리랜서</p></div>
-              <div class="resume-entry-detail"><strong>[ 디지털 이미지 콘텐츠 제작 ]</strong><p>일러스트 제작 / 이미지 소스 제작</p></div>
-            </article>
-            <article class="resume-entry">
-              <div class="resume-entry-head"><h4>이플</h4><p>2024.06 ~ 2025.06 | 사원 팀원</p></div>
-              <div class="resume-entry-detail"><strong>[캐릭터 IP 'GOLDENCHOU WITH FRIENDS' 제작 전반]</strong><p>캐릭터 디자인 및 굿즈 제작 전반 / 캐릭터 인스타 계정 운영<br>오프라인 홍보 (일러스트 페어 참여 및 오프라인 행사 참여)</p></div>
-            </article>
-            <article class="resume-entry">
-              <div class="resume-entry-head"><h4>시대</h4><p>2017.09 ~ 2021.01 | 디자인팀 주임</p></div>
-              <div class="resume-entry-detail"><strong>[ 파크랜드 인쇄물 디자인 시안 전담 ]</strong><p>각종 출력물 시안 및 제작 / 이모티콘 캐릭터 제작 (둘러출근, 격렬한 신입<br class="resume-wide-only"> 격포씨 / 카카오 이모티콘 등록)</p></div>
-            </article>
-          </div>
-          <div class="resume-column resume-column-right">
-            <div class="resume-group"><h3 class="resume-group-title">Education</h3>
-              <article class="resume-entry"><div class="resume-entry-head"><h4>[NCS]기반 시각디자인 실무과정</h4><p>2017. 03 ~ 2017. 07&nbsp; [그린컴퓨터아카데미 부산캠퍼스]</p></div></article>
-              <article class="resume-entry"><div class="resume-entry-head"><h4>영상편집&amp;광고콘텐츠 제작 (프리미어,에펙,프로젝트) B</h4><p>2026. 06 ~ 2026. 11&nbsp; [센텀직업전문학교]</p></div></article>
-            </div>
-            <div class="resume-group"><h3 class="resume-group-title">Awards</h3>
-              <article class="resume-entry"><div class="resume-entry-head"><h4>BCON GROUND 비콘티콘 공모전 대상 <span>2021</span></h4><p>[부산광역시도시재생지원센터]</p></div></article>
-            </div>
-            <div class="resume-group"><h3 class="resume-group-title">Tools</h3>
-              <p class="resume-tools">· Adobe Illustrator&nbsp;&nbsp; · Adobe Photoshop&nbsp;&nbsp; · Adobe Premiere Pro<br>· Adobe After Effects</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Resume Section -->
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section boytea-portfolio" aria-labelledby="portfolio-heading">
-      <div class="container portfolio-shell">
-        <div class="portfolio-heading-wrap"><h2 id="portfolio-heading">Portfolio</h2></div>
-        <div class="boytea-filter-layout" data-default-filter="*">
-          <ul class="portfolio-filters isotope-filters" aria-label="프로젝트 카테고리">
-            <li data-filter="*" class="filter-active">ALL</li>
-            <li data-filter=".filter-design">DESIGN</li>
-            <li data-filter=".filter-video">VIDEO</li>
-            <li data-filter=".filter-figma">FIGMA</li>
-            <li data-filter=".filter-teamproject">TEAM PROJECT</li>
-          </ul>
-          <div class="row isotope-container portfolio-grid" data-aos="fade-up" data-aos-delay="100">
-            <article class="portfolio-item isotope-item filter-design portfolio-size-large">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/Thum_D01.jpg" alt="Design 01" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 01</h4><p>캐릭터 디자인 · 그린이</p></div>
-                  <a href="assets/img/details/Detail_D01.jpg" class="design-scroll-link details-link" aria-label="Design 01 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-design portfolio-size-small">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-4.jpg" alt="Design 02" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 02</h4><p>그래픽 디자인</p></div>
-                  <a href="assets/img/details/long-masonry-portfolio-2.jpg" class="design-scroll-link preview-link" aria-label="Design 02 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-video portfolio-size-large">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-2.jpg" alt="Video 01" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Video 01</h4><p>영상 · 모션그래픽</p></div>
-                  <a href="video-details.html" class="details-link" aria-label="Video 01 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-figma portfolio-size-medium">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-3.jpg" alt="Figma 01" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Figma 01</h4><p>UI/UX 디자인</p></div>
-                  <a href="figma-details.html" class="details-link" aria-label="Figma 01 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-teamproject portfolio-size-medium">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/teamproject-1.jpg" alt="Team Project 01" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Team Project 01</h4><p>팀 프로젝트</p></div>
-                  <a href="teamproject-details.html" class="details-link" aria-label="Team Project 01 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-design portfolio-size-medium">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-7.jpg" alt="Design 03" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Design 03</h4><p>브랜딩 · 패키지</p></div>
-                  <a href="assets/img/details/long-masonry-portfolio-3.jpg" class="design-scroll-link preview-link" aria-label="Design 03 이미지 스크롤 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-video portfolio-size-large">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-5.jpg" alt="Video 02" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Video 02</h4><p>영상 제작</p></div>
-                  <a href="video-details.html" class="details-link" aria-label="Video 02 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-figma portfolio-size-small">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-6.jpg" alt="Figma 02" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Figma 02</h4><p>앱 인터페이스</p></div>
-                  <a href="figma-details02.html" class="details-link" aria-label="Figma 02 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-            <article class="portfolio-item isotope-item filter-video portfolio-size-large">
-              <div class="portfolio-card">
-                <div class="portfolio-thumbnail"><img src="assets/img/thumbnails/masonry-portfolio-8.jpg" alt="Video 03" loading="lazy"></div>
-                <div class="portfolio-info"><div class="portfolio-copy"><h4>Video 03</h4><p>영상 편집</p></div>
-                  <a href="video-details.html" class="details-link" aria-label="Video 03 상세 보기"><i class="bi bi-arrow-up-right"></i></a>
-                </div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section><!-- /Portfolio Section -->
-    </div><!-- /Resume + Portfolio shared surface -->
-
-
+</div>
+<p class="footnote">* 본 페이지의 모든 작업물은 기획·최종 제작까지 지원자 단독으로 진행하였습니다.</p>
+</div>
+<div aria-label="핵심 역량" class="cards" data-about-reveal="">
+<a aria-label="DESIGN: 그래픽 · 캐릭터 · 브랜딩" class="about-card" href="#portfolio">
+<img alt="" class="about-card-photo" decoding="async" loading="lazy" src="assets/img/aboutme_imege-01.png"/>
+<span class="card-content">
+<span class="card-title">DESIGN</span>
+<span class="card-subtitle">그래픽 · 캐릭터 · 브랜딩</span>
+<span class="card-detail">다양한 매체를 넘나드는<br/>실무 디자인 역량</span>
+</span>
+</a>
+<a aria-label="ADAPT: 수정 대응 · 방향 전환" class="about-card" href="#portfolio">
+<img alt="" class="about-card-photo" decoding="async" loading="lazy" src="assets/img/aboutme_imege-02.png"/>
+<span class="card-content">
+<span class="card-title">ADAPT</span>
+<span class="card-subtitle">수정 대응 · 방향 전환</span>
+<span class="card-detail">변화하는 요구에 맞춰<br/>유연하게 대응합니다</span>
+</span>
+</a>
+<a aria-label="COMM: 클라이언트 협업" class="about-card" href="#portfolio">
+<img alt="" class="about-card-photo" decoding="async" loading="lazy" src="assets/img/aboutme_imege-03.png"/>
+<span class="card-content">
+<span class="card-title">COMM</span>
+<span class="card-subtitle">클라이언트 협업</span>
+<span class="card-detail">의도를 파악하고 조율해<br/>결과로 연결합니다</span>
+</span>
+</a>
+<a aria-label="RESP: 기획부터 최종 납품까지" class="about-card" href="#portfolio">
+<img alt="" class="about-card-photo" decoding="async" loading="lazy" src="assets/img/aboutme_imege-04.png"/>
+<span class="card-content">
+<span class="card-title">RESP</span>
+<span class="card-subtitle">기획부터 최종 납품까지</span>
+<span class="card-detail">시작부터 마무리까지<br/>책임 있게 완수합니다</span>
+</span>
+</a>
+</div>
+</div>
+</section><!-- /About Section -->
+<div class="resume-portfolio-surface">
+<!-- Resume Section -->
+<section aria-labelledby="resume-heading" class="resume section boytea-resume" id="resume">
+<div class="resume-layout">
+<h2 class="resume-page-heading" id="resume-heading">Resume</h2>
+<div class="resume-columns">
+<div class="resume-column">
+<h3 class="resume-group-title">Experience</h3>
+<article class="resume-entry">
+<div class="resume-entry-head"><h4>통로이미지</h4><p>2024.03 ~ 재직중 | 프리랜서</p></div>
+<div class="resume-entry-detail"><strong>[ 디지털 이미지 콘텐츠 제작 ]</strong><p>일러스트 제작 / 이미지 소스 제작</p></div>
+</article>
+<article class="resume-entry">
+<div class="resume-entry-head"><h4>이플</h4><p>2024.06 ~ 2025.06 | 사원 팀원</p></div>
+<div class="resume-entry-detail"><strong>[캐릭터 IP 'GOLDENCHOU WITH FRIENDS' 제작 전반]</strong><p>캐릭터 디자인 및 굿즈 제작 전반 / 캐릭터 인스타 계정 운영<br/>오프라인 홍보 (일러스트 페어 참여 및 오프라인 행사 참여)</p></div>
+</article>
+<article class="resume-entry">
+<div class="resume-entry-head"><h4>시대</h4><p>2017.09 ~ 2021.01 | 디자인팀 주임</p></div>
+<div class="resume-entry-detail"><strong>[ 파크랜드 인쇄물 디자인 시안 전담 ]</strong><p>각종 출력물 시안 및 제작 / 이모티콘 캐릭터 제작 (둘러출근, 격렬한 신입<br class="resume-wide-only"/> 격포씨 / 카카오 이모티콘 등록)</p></div>
+</article>
+</div>
+<div class="resume-column resume-column-right">
+<div class="resume-group"><h3 class="resume-group-title">Education</h3>
+<article class="resume-entry"><div class="resume-entry-head"><h4>[NCS]기반 시각디자인 실무과정</h4><p>2017. 03 ~ 2017. 07  [그린컴퓨터아카데미 부산캠퍼스]</p></div></article>
+<article class="resume-entry"><div class="resume-entry-head"><h4>영상편집&amp;광고콘텐츠 제작 (프리미어,에펙,프로젝트) B</h4><p>2026. 06 ~ 2026. 11  [센텀직업전문학교]</p></div></article>
+</div>
+<div class="resume-group"><h3 class="resume-group-title">Awards</h3>
+<article class="resume-entry"><div class="resume-entry-head"><h4>BCON GROUND 비콘티콘 공모전 대상 <span>2021</span></h4><p>[부산광역시도시재생지원센터]</p></div></article>
+</div>
+<div class="resume-group"><h3 class="resume-group-title">Tools</h3>
+<div class="resume-tools">
+  <div class="tools-row">
+    <span>Adobe Illustrator</span><span>Adobe Photoshop</span><span>Adobe Premiere Pro</span><span>Adobe After Effects</span>
+  </div>
+  <div class="tools-row"><span>Figma</span></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section><!-- /Resume Section -->
+<!-- Portfolio Section -->
+<section aria-labelledby="portfolio-heading" class="portfolio section boytea-portfolio" id="portfolio">
+<div class="container portfolio-shell">
+<div class="portfolio-heading-wrap"><h2 id="portfolio-heading">Portfolio</h2></div>
+<div class="boytea-filter-layout" data-default-filter="*">
+<ul aria-label="프로젝트 카테고리" class="portfolio-filters isotope-filters"><li class="filter-active" data-filter="*">전체</li><li data-filter=".filter-character">캐릭터 디자인</li><li data-filter=".filter-video">비디오</li><li data-filter=".filter-editorial">편집디자인</li><li data-filter=".filter-goods">굿즈</li></ul>
+<div class="row isotope-container portfolio-grid" data-aos="fade-up" data-aos-delay="100">
+<article class="portfolio-item isotope-item portfolio-size-small filter-character">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="Figma 02" loading="lazy" src="assets/img/thumbnails/Thum_D01.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>캐릭터디자인</h4><p>GOLDENCHOU WITH FRIENDS</p></div>
+<a aria-label="GOLDENCHOU WITH FRIENDS 캐릭터 상세 보기" class="details-link" href="figma-details02.html">
+<i class="bi bi-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-small filter-video">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="Video 01" loading="lazy" src="assets/img/thumbnails/Thum_D02.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>생성형AI 영상</h4><p>GOLDENCHOU WITH FRIENDS<br/>· 쇼츠</p></div>
+<a aria-label="Video 01 상세 보기" class="details-link" href="video-details02.html"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-small filter-goods">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="Design 03" loading="lazy" src="assets/img/thumbnails/Thum_D03.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>굿즈디자인</h4><p>골든슈위드프랜즈 스마트폰 케이스</p></div>
+<a aria-label="Design 03 이미지 스크롤 보기" class="design-scroll-link preview-link" href="assets/img/details/250409_아티션_스마트폰케이스_상세페이지_01.jpg"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-medium filter-goods" id="goldenchou-acrylic-card">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="골든슈위드프랜즈 아크릴 굿즈 실물" loading="lazy" src="assets/img/thumbnails/Thum_D04.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>굿즈디자인</h4><p>골든슈위드프랜즈 아크릴 굿즈</p></div>
+<a aria-label="아크릴 굿즈 상세 이미지 2장 보기" class="acrylic-detail-link preview-link" href="#goldenchouAcrylicModal"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-small filter-character">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="Figma 02" loading="lazy" src="assets/img/thumbnails/Thum_D05.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>캐릭터디자인</h4><p>그린이</p></div>
+<a aria-label="Figma 02 상세 보기" class="details-link" href="figma-details03.html"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-large filter-video">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="Video 01" loading="lazy" src="assets/img/thumbnails/Thum_D06.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>생성형AI 영상</h4><p>그린이 · 쇼츠</p></div>
+<a aria-label="Video 01 상세 보기" class="details-link" href="video-details.html"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-small filter-character" id="underdog-character-card"><div class="portfolio-card"><div class="portfolio-thumbnail"><img alt="우리는 언더독 캐릭터 디자인" loading="lazy" src="assets/img/thumbnails/Thum_D07.jpg"/></div><div class="portfolio-info"><div class="portfolio-copy"><h4>캐릭터디자인</h4><p>우리는 언더독 · 캐릭터 IP / 이모티콘</p></div><a aria-label="우리는 언더독 상세페이지 보기" class="details-link" href="underdog-details.html"><i class="bi bi-arrow-up-right"></i></a></div></div></article><article class="portfolio-item isotope-item portfolio-size-small filter-character" id="meow-coffee-card">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail">
+<img alt="MEOW COFFEE 캐릭터 및 브랜딩 디자인" loading="lazy" src="assets/img/thumbnails/Thum_D08.jpg"/>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-copy">
+<h4>캐릭터디자인</h4>
+<p>MEOW COFFEE · 미우커피</p>
+</div>
+<a aria-label="미우커피 상세페이지 보기" class="details-link" href="meow coffee-details.html">
+<i class="bi bi-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-large filter-character">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail"><img alt="트렌드탐정 루카 캐릭터 가이드북" loading="lazy" src="assets/img/thumbnails/Thum_D09.jpg"/></div>
+<div class="portfolio-info"><div class="portfolio-copy"><h4>캐릭터디자인</h4><p>트렌드탐정 루카 · 캐릭터 가이드북</p></div>
+<a aria-label="트렌드탐정 루카 상세페이지 보기" class="details-link" href="luca-details.html"><i class="bi bi-arrow-up-right"></i></a>
+</div>
+</div>
+</article>
+<!-- PACKAGE DESIGN : 기존 Figma 01 카드 교체 -->
+<article class="portfolio-item isotope-item portfolio-size-medium filter-editorial" id="package-design-card">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail">
+<img alt="ARTITION 패키지 디자인" loading="lazy" src="assets/img/thumbnails/Thum_D10.jpg"/>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-copy">
+<h4>패키지디자인</h4>
+<p>ARTITION · PACKAGE DESIGN</p>
+</div>
+<a aria-label="패키지 디자인 상세페이지 보기" class="details-link" href="package-details.html">
+<i class="bi bi-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-medium filter-editorial" id="editorial-design-card">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail">
+<img alt="인쇄물 및 편집디자인" loading="lazy" src="assets/img/thumbnails/Thum_D11.jpg"/>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-copy">
+<h4>인쇄물디자인</h4>
+<p>포스터 &amp; BI 디자인</p>
+</div>
+<a aria-label="인쇄물디자인 상세페이지 보기" class="details-link" href="editorial-details.html">
+<i class="bi bi-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</article>
+<article class="portfolio-item isotope-item portfolio-size-small filter-video">
+<div class="portfolio-card">
+<div class="portfolio-thumbnail">
+<img alt="AI 신발 광고 영상" loading="lazy" src="assets/img/thumbnails/Thum_D12.jpg"/>
+</div>
+<div class="portfolio-info">
+<div class="portfolio-copy">
+<h4>AI 광고 영상</h4>
+<p>FORWARD · AI 광고영상</p>
+</div>
+<a aria-label="AI 신발 광고 상세 보기" class="details-link" href="ai-commercial-details.html">
+<i class="bi bi-arrow-up-right"></i>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</div>
+</section><!-- /Portfolio Section -->
+</div><!-- /Resume + Portfolio shared surface -->
 <!-- Contact Section -->
-<section id="contact" class="contact section boytea-contact-simple">
-  <div class="container contact-shell">
-
-    <h2 class="contact-title" data-aos="fade-up">Contact</h2>
-
-    <div class="row contact-layout gy-4">
-
-      <!-- 왼쪽: 연락처 -->
-      <div class="col-lg-4 contact-info" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="contact-info-item">
-          <span class="contact-info-label">PHONE</span>
-          <a href="tel:01000000000" class="contact-info-value">
+<section class="contact section boytea-contact-simple" id="contact">
+<div class="container contact-shell">
+<h2 class="contact-title" data-aos="fade-up">Contact</h2>
+<div class="row contact-layout gy-4">
+<!-- 왼쪽: 연락처 -->
+<div class="col-lg-4 contact-info" data-aos="fade-up" data-aos-delay="100">
+<div class="contact-info-item">
+<span class="contact-info-label">PHONE</span>
+<a class="contact-info-value" href="tel:01000000000">
             010-7620-4510
           </a>
-        </div>
-
-        <div class="contact-info-item">
-          <span class="contact-info-label">EMAIL</span>
-          <a href="mailto:your@email.com" class="contact-info-value">
+</div>
+<div class="contact-info-item">
+<span class="contact-info-label">EMAIL</span>
+<a class="contact-info-value" href="mailto:your@email.com">
             js41090@gmail.com
           </a>
-        </div>
-
-      </div>
-
-      <!-- 오른쪽: 메시지 폼 -->
-      <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-        <form action="#" class="php-email-form contact-form">
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <input type="text" name="name" class="form-control"
-                     placeholder="Your Name" required>
-            </div>
-
-            <div class="col-md-6">
-              <input type="email" name="email" class="form-control"
-                     placeholder="Your Email" required>
-            </div>
-
-            <div class="col-12">
-              <input type="text" name="subject" class="form-control"
-                     placeholder="Subject" required>
-            </div>
-
-            <div class="col-12">
-              <textarea name="message" class="form-control"
-                        rows="6" placeholder="Message" required></textarea>
-            </div>
-
-            <div class="col-12 contact-actions">
-              <button type="submit" class="contact-btn contact-btn-primary">
+</div>
+</div>
+<!-- 오른쪽: 메시지 폼 -->
+<div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
+<form action="#" class="php-email-form contact-form">
+<div class="row gy-3">
+<div class="col-md-6">
+<input class="form-control" name="name" placeholder="Your Name" required="" type="text"/>
+</div>
+<div class="col-md-6">
+<input class="form-control" name="email" placeholder="Your Email" required="" type="email"/>
+</div>
+<div class="col-12">
+<input class="form-control" name="subject" placeholder="Subject" required="" type="text"/>
+</div>
+<div class="col-12">
+<textarea class="form-control" name="message" placeholder="Message" required="" rows="6"></textarea>
+</div>
+<div class="col-12 contact-actions">
+<button class="contact-btn contact-btn-primary" type="submit">
                 SEND MESSAGE
               </button>
-              <button type="reset" class="contact-btn contact-btn-secondary">
+<button class="contact-btn contact-btn-secondary" type="reset">
                 RESET MESSAGE
               </button>
-            </div>
-          </div>
-
-        </form>
-      </div>
-
-    </div>
-  </div>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
 </section>
 <!-- /Contact Section -->
-
-
-  </main>
-
-  
-<footer id="footer" class="footer boytea-footer">
-  <div class="container">
-    <p>© 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.</p>
-  </div>
+</main>
+<footer class="footer boytea-footer" id="footer">
+<div class="container">
+<p>© 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.</p>
+</div>
 </footer>
-
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-caret-up-fill"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-
-  <!-- About Me scroll reveal: independent of AOS library -->
-  <script>
+<!-- Scroll Top -->
+<a class="scroll-top d-flex align-items-center justify-content-center" href="#" id="scroll-top"><i class="bi bi-caret-up-fill"></i></a>
+<!-- Preloader -->
+<div id="preloader"></div>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<!-- Main JS File -->
+<script src="assets/js/main.js"></script>
+<!-- About Me scroll reveal: independent of AOS library -->
+<script>
     (function () {
       function initAboutReveal() {
         var items = document.querySelectorAll('#about [data-about-reveal]');
@@ -421,7 +453,6 @@
       else initAboutReveal();
     })();
   </script>
-
 <script>
 (function () {
   function initResumeReveal() {
@@ -480,13 +511,72 @@
 
 
 </script>
+<!-- 디자인 작품: 페이지 이동 없는 스크롤 팝업 -->
+<div aria-hidden="true" aria-label="디자인 작품 보기" aria-modal="true" class="design-scroll-modal" id="designScrollModal" role="dialog">
+<button aria-label="닫기" class="design-scroll-close" type="button">×</button>
+<div class="design-scroll-viewport" tabindex="0"><img alt="디자인 상세 이미지"/></div>
+</div>
+<script src="assets/js/design-scroll-modal.js"></script>
+<!-- 아크릴 굿즈 전용 상세 팝업: 스마트폰 케이스 모달과 완전히 분리 -->
+<div aria-hidden="true" aria-label="골든슈위드프랜즈 아크릴 굿즈 상세" aria-modal="true" class="acrylic-modal" id="goldenchouAcrylicModal" role="dialog">
+<button aria-label="닫기" class="acrylic-modal-close" type="button">×</button>
+<div class="acrylic-modal-content" tabindex="0">
+<img alt="아크릴 굿즈 상세페이지 상단" loading="lazy" src="assets/img/details/250917_아티션_아크릴굿즈_상세페이지_대지 1.jpg"/>
+<img alt="아크릴 굿즈 상세페이지 하단" loading="lazy" src="assets/img/details/250917_아티션_아크릴굿즈_상세페이지-02.jpg"/>
+</div>
+</div>
+<style>
+    body.acrylic-modal-open{overflow:hidden}
+    .acrylic-modal{position:fixed;inset:0;z-index:100001;background:rgba(0,0,0,.91);display:none;align-items:center;justify-content:center;padding:24px 54px}
+    .acrylic-modal.is-open{display:flex}
+    .acrylic-modal-content{width:min(100%,850px);height:min(92vh,1100px);overflow-y:auto;overscroll-behavior:contain;outline:none;background:#fff}
+    .acrylic-modal-content img{display:block;width:100%;height:auto;margin:0;padding:0;border:0}
+    .acrylic-modal-close{position:fixed;top:12px;right:20px;z-index:1;color:#fff;background:transparent;border:0;font:300 42px/1 Arial,sans-serif;cursor:pointer}
+    @media(max-width:767px){.acrylic-modal{padding:55px 12px 15px}.acrylic-modal-content{height:calc(100dvh - 70px)}.acrylic-modal-close{top:8px;right:14px}}
+  </style>
+<script>
+  (function(){
+    const modal=document.getElementById('goldenchouAcrylicModal');
+    const link=document.querySelector('#goldenchou-acrylic-card .acrylic-detail-link');
+    const content=modal.querySelector('.acrylic-modal-content');
+    const closeButton=modal.querySelector('.acrylic-modal-close');
+    if(!modal||!link||!content||!closeButton)return;
+    function openAcrylic(e){e.preventDefault();modal.classList.add('is-open');modal.setAttribute('aria-hidden','false');content.scrollTop=0;document.body.classList.add('acrylic-modal-open');content.focus({preventScroll:true});}
+    function closeAcrylic(){modal.classList.remove('is-open');modal.setAttribute('aria-hidden','true');document.body.classList.remove('acrylic-modal-open');link.focus({preventScroll:true});}
+    link.addEventListener('click',openAcrylic);
+    closeButton.addEventListener('click',closeAcrylic);
+    modal.addEventListener('click',e=>{if(e.target===modal)closeAcrylic()});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('is-open'))closeAcrylic()});
+  })();
+  </script>
+<!-- SCROLL TO TOP -->
+<button aria-label="맨 위로 이동" class="detail-scroll-top" id="detailScrollTop" type="button">
+  ▲
+</button>
+<script>
+(function () {
+  const button = document.getElementById("detailScrollTop");
 
-  <!-- 디자인 작품: 페이지 이동 없는 스크롤 팝업 -->
-  <div id="designScrollModal" class="design-scroll-modal" role="dialog" aria-modal="true" aria-label="디자인 작품 보기" aria-hidden="true">
-    <button type="button" class="design-scroll-close" aria-label="닫기">&times;</button>
-    <div class="design-scroll-viewport" tabindex="0"><img alt="디자인 상세 이미지"></div>
-  </div>
-  <script src="assets/js/design-scroll-modal.js"></script>
+  function updateScrollButton() {
+    button.classList.toggle(
+      "is-visible",
+      window.scrollY > 300
+    );
+  }
+
+  window.addEventListener("scroll", updateScrollButton, {
+    passive: true
+  });
+
+  updateScrollButton();
+
+  button.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+})();
+</script>
 </body>
-
 </html>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>우리는 언더독 | BOY TEA PORTFOLIO</title><link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/><link href="assets/css/main.css" rel="stylesheet"/><style>
+/* =========================================
+   VIDEO DETAILS — FINAL
+========================================= */
+
+:root {
+  --detail-width: 1144px;
+}
+
+/* 전체 페이지 */
+html {
+  min-height: 100%;
+  background: #f2f2f2;
+}
+
+body.detail-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  color: #111;
+
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.55)
+    ),
+    url("assets/img/concrete_texture.png");
+
+  background-size: auto, 960px auto;
+  background-position: center top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 공통 정렬 기준 */
+body.detail-page .detail-container,
+body.detail-page .detail-header-inner {
+  width: min(
+    var(--detail-width),
+    calc(100% - 40px)
+  );
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.detail-page .detail-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.detail-page .detail-header::before,
+body.detail-page .detail-header::after {
+  content: none;
+}
+
+body.detail-page .detail-header-inner {
+  min-height: 82px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.detail-page .detail-logo {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  margin-left: auto;
+}
+
+body.detail-page .detail-nav a {
+  display: inline-block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    font-weight .25s ease;
+}
+
+body.detail-page .detail-nav a:hover {
+  transform: translateY(-3px);
+  font-weight: 800;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+body.detail-page .detail-hero {
+  background: transparent;
+  color: #111;
+  padding: 30px 0 18px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(0,0,0,.45);
+}
+
+/* FIGMA PROJECT. */
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 돌아가기 */
+body.detail-page .detail-back {
+  flex-shrink: 0;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s ease;
+}
+
+body.detail-page .detail-back:hover {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+/* FIGMA detail: video page styling retained, horizontal info and image below */
+body.detail-page .detail-content { flex:1; background:transparent; padding:20px 0 35px; }
+body.detail-page .figma-info { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:18px; border:1px solid rgba(0,0,0,.55); border-radius:8px; padding:18px 22px; background:rgba(255,255,255,.25); }
+body.detail-page .figma-info .info-label { font-size:11px; font-weight:800; margin:0 0 7px; }
+body.detail-page .figma-info .info-value { font-size:13px; font-weight:500; margin:0; line-height:1.55; overflow-wrap:anywhere; }
+body.detail-page .figma-artwork { margin:26px 0 0; text-align:center; }
+body.detail-page .figma-artwork img { display:block; width:100%; height:auto; max-width:100%; }
+body.detail-page .goldenchou-artwork { padding:0; }
+body.detail-page .goldenchou-artwork img { margin:0; border:0; }
+@media (max-width: 1100px) { body.detail-page .detail-hero h1 { white-space:normal; } }
+@media(max-width:767px) { body.detail-page .figma-info {grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;} }
+
+body.detail-page .detail-footer {
+  margin-top: auto;
+  padding: 20px 15px;
+
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  body.detail-page .detail-header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav {
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav a {
+    font-size: 13px;
+  }
+
+  body.detail-page .detail-hero {
+    padding-top: 25px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-info {
+    height: auto;
+  }
+
+  body.detail-page .detail-description {
+    margin-top: 15px;
+  }
+}
+
+/* GOLDENCHOU — user-controlled gallery (normal page scrolling) */
+body.detail-page .figma-info .info-value {line-height:1.6;}
+body.detail-page .detail-content {padding-bottom:35px;}
+.gc-scroll {padding:0!important;margin:26px auto 0;background:transparent!important;overflow:hidden!important;width:100%;}
+.gc-sticky {position:relative;height:auto;min-height:0;display:flex;flex-direction:column;align-items:center;overflow:hidden;padding:10px 0 20px;}
+.gc-stage {width:100%;overflow:hidden;touch-action:pan-y;cursor:grab;user-select:none;}
+.gc-stage.is-dragging {cursor:grabbing;}
+.gc-track {display:flex;align-items:center;gap:28px;transform:translate3d(0,0,0);transition:transform .48s cubic-bezier(.22,.68,0,1);}
+.gc-stage.is-dragging .gc-track {transition:none;}
+.gc-slide {flex:0 0 auto;width:min(72vw,1050px);display:flex;justify-content:center;align-items:center;opacity:.28;filter:brightness(.55);transform:scale(.91);transition:opacity .35s ease,filter .35s ease,transform .35s ease;}
+.gc-slide.is-active {opacity:1;filter:brightness(1);transform:scale(1);}
+.gc-slide img {display:block;width:100%;height:auto;max-height:76vh;object-fit:contain;box-shadow:0 18px 50px rgba(0,0,0,.15);pointer-events:none;}
+.gc-controls {width:min(1144px,calc(100% - 40px));margin:16px auto 0;display:flex;align-items:center;gap:15px;color:#111;font-size:12px;font-weight:700;}
+.gc-hint {letter-spacing:.05em;color:#444;}
+.gc-nav {width:40px;height:40px;border:1px solid #222;border-radius:6px;background:rgba(255,255,255,.5);color:#111;font-size:22px;line-height:1;cursor:pointer;transition:background .2s;}
+.gc-nav:hover:not(:disabled){background:#111;color:#fff;}
+.gc-nav:disabled {opacity:.25;cursor:default;}
+.gc-count {white-space:nowrap;margin-left:auto;font-variant-numeric:tabular-nums;}
+.gc-count strong {font-size:19px;}
+.gc-progress {height:3px;width:120px;background:rgba(0,0,0,.17);}
+.gc-progress-fill {height:100%;width:0;background:#111;transition:width .35s ease;}
+@media(max-width:767px){.gc-slide{width:88vw}.gc-slide img{max-height:68vh}.gc-track{gap:14px}.gc-hint{font-size:10px}.gc-controls{gap:8px}.gc-progress{width:50px}.gc-nav{width:36px;height:36px}body.detail-page .detail-hero h1{font-size:clamp(24px,6vw,36px);white-space:normal}}
+@media(prefers-reduced-motion:reduce){.gc-track,.gc-slide,.gc-progress-fill{transition:none}}
+
+/* DARK THEME — gallery images remain unmodified */
+html {background:#090a0c;}
+body.detail-page {
+  color:#f3f3f3;
+  background-color:#090a0c;
+  background-image:linear-gradient(rgba(0,0,0,.84),rgba(0,0,0,.84)),url("assets/img/concrete_texture.png");
+  background-size:auto,960px auto;
+  background-position:center top;
+  background-repeat:no-repeat,repeat;
+}
+body.detail-page .detail-logo,
+body.detail-page .detail-nav a,
+body.detail-page .detail-hero,
+body.detail-page .detail-hero h1,
+body.detail-page .detail-back,
+body.detail-page .detail-footer {color:#f5f5f5;}
+body.detail-page .detail-hero .detail-container {border-bottom-color:rgba(255,255,255,.38);}
+body.detail-page .figma-info {border-color:rgba(255,255,255,.45);background:rgba(0,0,0,.22);}
+body.detail-page .figma-info .info-label {color:#e7e7e7;}
+body.detail-page .figma-info .info-value {color:#f4f4f4;}
+body.detail-page .detail-footer {border-top-color:rgba(255,255,255,.22);}
+.gc-controls {color:#fff;}
+.gc-hint {color:#c8c8c8;}
+.gc-nav {background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.65);color:#fff;}
+.gc-nav:hover:not(:disabled) {background:#fff;color:#111;}
+.gc-progress {background:rgba(255,255,255,.24);}
+.gc-progress-fill {background:#fff;}
+
+/* Detail pages: back to top */
+body.detail-page .detail-scroll-top {
+  position: fixed; right: 24px; bottom: 24px; z-index: 9999;
+  display: flex; align-items: center; justify-content: center;
+  width: 46px; height: 46px; padding: 0;
+  border: 1px solid rgba(255,255,255,.65); border-radius: 6px;
+  background: rgba(9,10,12,.94); color: #fff;
+  font-size: 20px; line-height: 1; cursor: pointer;
+  opacity: 0; visibility: hidden; transform: translateY(12px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+body.detail-page .detail-scroll-top.is-visible {
+  opacity: 1; visibility: visible; transform: translateY(0);
+}
+body.detail-page .detail-scroll-top:hover {background: #fff; color: #111;}
+@media (max-width: 767px) {
+  body.detail-page .detail-scroll-top {right: 16px; bottom: 16px; width: 42px; height: 42px;}
+}
+
+/* UNDERDOG — 단일 갤러리 레이아웃 (중복 간격 규칙 제거) */
+body.detail-page .ud-gallery {
+  box-sizing: border-box;
+  width: min(100%, 1144px);
+  margin: 18px auto 0;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: transparent;
+}
+/* main.css 의 전역 section { padding:60px 0 } 를 이 갤러리에서만 무효화 */
+body.detail-page .ud-gallery > section,
+body.detail-page .ud-gallery > section + section {
+  box-sizing: border-box;
+  display: block;
+  position: static;
+  flex: none;
+  width: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 0;
+  overflow: visible;
+  scroll-margin-top: 0;
+}
+body.detail-page .ud-gallery > .ud-sheet {
+  background: #fff;
+}
+body.detail-page .ud-gallery > .ud-sheet img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: top;
+}
+body.detail-page .ud-gallery > .ud-motion {
+  background: #fff;
+}
+body.detail-page .ud-gallery .ud-motion-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  justify-items: center;
+  gap: 18px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 0;
+  line-height: 0;
+}
+body.detail-page .ud-gallery .ud-motion-grid img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+}
+body.detail-page .ud-page-label { position: absolute; left: -9999px; }
+@media (max-width: 767px) {
+  body.detail-page .ud-gallery { margin-top: 18px; padding: 0 10px; }
+  body.detail-page .ud-gallery .ud-motion-grid { gap: 5px; }
+}
+
+</style>
+
+</head><body class="detail-page"><header class="detail-header"><div class="detail-header-inner"><a class="detail-logo" href="index.html">BOY TEA PORTFOLIO PROJECT</a><nav class="detail-nav"><a href="index.html#hero">Home</a><a href="index.html#about">About</a><a href="index.html#resume">Resume</a><a href="index.html#portfolio">Portfolio</a><a href="index.html#contact">Contact</a></nav></div></header><section class="detail-hero"><div class="detail-container"><h1>CHARACTER IP PROJECT.</h1><a class="detail-back" href="index.html#portfolio">← BACK TO PORTFOLIO</a></div></section><main class="detail-content"><div class="detail-container"><section aria-label="프로젝트 정보" class="figma-info"><div><p class="info-label">PROJECT</p><p class="info-value">우리는 언더독 (WE ARE UNDERDOG)</p></div><div><p class="info-label">CATEGORY</p><p class="info-value">Character IP · Emoticon Design</p></div><div><p class="info-label">ROLE</p><p class="info-value">개인프로젝트</p></div><div><p class="info-label">TOOLS</p><p class="info-value">Adobe Illustrator · Adobe Photoshop</p></div></section></div><div class="ud-gallery"><section aria-label="언더독 프로젝트 소개 1" class="ud-sheet ud-opening"><img alt="우리는 언더독 소개 1페이지" decoding="sync" loading="eager" src="assets/img/underdog/page-01.jpg"/></section><section aria-label="언더독 프로젝트 소개 2" class="ud-sheet ud-opening"><img alt="우리는 언더독 소개 2페이지" loading="lazy" src="assets/img/underdog/page-02.jpg"/></section><section aria-label="언더독 프로젝트 소개 3" class="ud-sheet ud-opening"><img alt="우리는 언더독 소개 3페이지" loading="lazy" src="assets/img/underdog/page-03.jpg"/></section><section aria-label="캐릭터 소개 4" class="ud-sheet"><img alt="우리는 언더독 캐릭터 소개 4페이지" loading="lazy" src="assets/img/underdog/page-04.jpg"/></section><section aria-label="움직이는 이모티콘 1, 2, 3" class="ud-motion"><div class="ud-motion-grid"><img alt="언더독 움직이는 이모티콘 01" loading="lazy" src="assets/img/underdog/anim-01.webp"/><img alt="언더독 움직이는 이모티콘 02" loading="lazy" src="assets/img/underdog/anim-02.webp"/><img alt="언더독 움직이는 이모티콘 03" loading="lazy" src="assets/img/underdog/anim-03.webp"/></div></section><section aria-label="캐릭터 소개 5" class="ud-sheet"><img alt="우리는 언더독 캐릭터 소개 5페이지" loading="lazy" src="assets/img/underdog/page-05.jpg"/></section><section aria-label="움직이는 이모티콘 13, 14, 15" class="ud-motion"><div class="ud-motion-grid"><img alt="언더독 움직이는 이모티콘 13" loading="lazy" src="assets/img/underdog/anim-13.webp"/><img alt="언더독 움직이는 이모티콘 14" loading="lazy" src="assets/img/underdog/anim-14.webp"/><img alt="언더독 움직이는 이모티콘 15" loading="lazy" src="assets/img/underdog/anim-15.webp"/></div></section><section aria-label="캐릭터 소개 6" class="ud-sheet"><img alt="우리는 언더독 캐릭터 소개 6페이지" loading="lazy" src="assets/img/underdog/page-06.jpg"/></section><section aria-label="움직이는 이모티콘 4, 5, 6" class="ud-motion"><div class="ud-motion-grid"><img alt="언더독 움직이는 이모티콘 04" loading="lazy" src="assets/img/underdog/anim-04.webp"/><img alt="언더독 움직이는 이모티콘 05" loading="lazy" src="assets/img/underdog/anim-05.webp"/><img alt="언더독 움직이는 이모티콘 06" loading="lazy" src="assets/img/underdog/anim-06.webp"/></div></section><section aria-label="캐릭터 소개 7" class="ud-sheet"><img alt="우리는 언더독 캐릭터 소개 7페이지" loading="lazy" src="assets/img/underdog/page-07.jpg"/></section><section aria-label="움직이는 이모티콘 7, 8, 9" class="ud-motion"><div class="ud-motion-grid"><img alt="언더독 움직이는 이모티콘 07" loading="lazy" src="assets/img/underdog/anim-07.webp"/><img alt="언더독 움직이는 이모티콘 08" loading="lazy" src="assets/img/underdog/anim-08.webp"/><img alt="언더독 움직이는 이모티콘 09" loading="lazy" src="assets/img/underdog/anim-09.webp"/></div></section><section aria-label="캐릭터 소개 8" class="ud-sheet"><img alt="우리는 언더독 캐릭터 소개 8페이지" loading="lazy" src="assets/img/underdog/page-08.jpg"/></section><section aria-label="움직이는 이모티콘 10, 11, 12" class="ud-motion"><div class="ud-motion-grid"><img alt="언더독 움직이는 이모티콘 10" loading="lazy" src="assets/img/underdog/anim-10.webp"/><img alt="언더독 움직이는 이모티콘 11" loading="lazy" src="assets/img/underdog/anim-11.webp"/><img alt="언더독 움직이는 이모티콘 12" loading="lazy" src="assets/img/underdog/anim-12.webp"/></div></section><section aria-label="언더독 응용 이미지 10" class="ud-sheet"><img alt="우리는 언더독 프로젝트 10페이지" loading="lazy" src="assets/img/underdog/page-10.jpg"/></section><section aria-label="언더독 응용 이미지 11" class="ud-sheet"><img alt="우리는 언더독 프로젝트 11페이지" loading="lazy" src="assets/img/underdog/page-11.jpg"/></section></div></main><footer class="detail-footer">© 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.</footer><button aria-label="맨 위로 이동" class="detail-scroll-top" id="udScrollTop" type="button">↑</button><script>(function(){const b=document.getElementById('udScrollTop');function update(){b.classList.toggle('is-visible',window.scrollY>350)}window.addEventListener('scroll',update,{passive:true});update();b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}))})();</script></body></html>

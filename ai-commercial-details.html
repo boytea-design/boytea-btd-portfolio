@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Video Project | BOY TEA</title>
+
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  
+<style>
+/* =========================================
+   VIDEO DETAILS — FINAL
+========================================= */
+
+:root {
+  --detail-width: 1144px;
+}
+
+/* 전체 페이지 */
+html {
+  min-height: 100%;
+  background: #f2f2f2;
+}
+
+body.detail-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  color: #111;
+
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.55)
+    ),
+    url("assets/img/concrete_texture.png");
+
+  background-size: auto, 960px auto;
+  background-position: center top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 공통 정렬 기준 */
+body.detail-page .detail-container,
+body.detail-page .detail-header-inner {
+  width: min(
+    var(--detail-width),
+    calc(100% - 40px)
+  );
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.detail-page .detail-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.detail-page .detail-header::before,
+body.detail-page .detail-header::after {
+  content: none;
+}
+
+body.detail-page .detail-header-inner {
+  min-height: 82px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.detail-page .detail-logo {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  margin-left: auto;
+}
+
+body.detail-page .detail-nav a {
+  display: inline-block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    font-weight .25s ease;
+}
+
+body.detail-page .detail-nav a:hover {
+  transform: translateY(-3px);
+  font-weight: 800;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+body.detail-page .detail-hero {
+  background: transparent;
+  color: #111;
+  padding: 30px 0 18px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(0,0,0,.45);
+}
+
+/* VIDEO PROJECT. */
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 돌아가기 */
+body.detail-page .detail-back {
+  flex-shrink: 0;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s ease;
+}
+
+body.detail-page .detail-back:hover {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+body.detail-page .detail-content {
+  flex: 1;
+  background: transparent;
+  padding: 20px 0 35px;
+}
+
+body.detail-page .detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* 영상 */
+body.detail-page .detail-media {
+  overflow: hidden;
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: #111;
+  align-self: start;
+}
+
+body.detail-page .detail-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+body.detail-page .detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+  min-height: 0;
+  padding: 20px 22px;
+
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: rgba(255,255,255,.35);
+  box-sizing: border-box;
+}
+
+body.detail-page .detail-info h2 {
+  margin: 0 0 15px;
+  padding-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+
+  border-bottom: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-info dl {
+  margin: 0;
+}
+
+body.detail-page .detail-info dt {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+body.detail-page .detail-info dd {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* 프로젝트 소개 */
+body.detail-page .detail-description {
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-description h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+}
+
+body.detail-page .detail-description p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+body.detail-page .detail-footer {
+  margin-top: auto;
+  padding: 20px 15px;
+
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  body.detail-page .detail-header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav {
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav a {
+    font-size: 13px;
+  }
+
+  body.detail-page .detail-hero {
+    padding-top: 25px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-info {
+    height: auto;
+  }
+
+  body.detail-page .detail-description {
+    margin-top: 15px;
+  }
+}
+</style>
+
+</head>
+
+<body class="detail-page">
+
+  <!-- HEADER -->
+  <header class="detail-header">
+    <div class="detail-header-inner">
+
+      <a href="index.html" class="detail-logo">
+        BOY TEA PORTFOLIO PROJECT
+      </a>
+
+      <nav class="detail-nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#resume">Resume</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header>
+
+
+
+<!-- HERO -->
+<section class="detail-hero">
+  <div class="detail-container">
+
+    <h1>AI COMMERCIAL FILM.</h1>
+
+    <a href="index.html#portfolio" class="detail-back">
+      ← BACK TO PORTFOLIO
+    </a>
+
+  </div>
+</section>
+
+
+<!-- PROJECT CONTENT -->
+
+  <!-- PROJECT CONTENT -->
+  <main class="detail-content">
+    <div class="detail-container">
+
+<div class="detail-grid">
+
+  <!-- 영상 -->
+  <div class="detail-media">
+    <video autoplay muted playsinline controls preload="auto">
+      <source src="assets/video/AI생성광고_FORWARD_37s.mp4" type="video/mp4">
+      브라우저가 영상을 지원하지 않습니다.
+    </video>
+  </div>
+
+        <!-- 프로젝트 정보 -->
+
+<aside class="detail-info">
+  <h2>PROJECT INFORMATION</h2>
+
+  <dl>
+    <dt>CATEGORY</dt>
+    <dd>AI Commercial Film / Video Editing</dd>
+
+    <dt>PROJECT</dt>
+    <dd>FORWARD · AI 신발 광고_37s</dd>
+
+    <dt>ROLE</dt>
+    <dd>AI 영상 생성 · 컷 편집</dd>
+
+    <dt>TOOLS</dt>
+    <dd>Premiere Pro · After Effects · Grok · Google Flow</dd>
+  </dl>
+
+  <div class="detail-description">
+    <h3>ABOUT PROJECT</h3>
+    <p>생성형 AI로 제작한 FORWARD 신발 광고 영상입니다.</p>
+  </div>
+</aside>
+
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="detail-footer">
+    © 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.
+  </footer>
+
+</body>
+</html>
