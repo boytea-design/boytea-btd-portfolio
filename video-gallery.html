@@ -1,0 +1,405 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Video Projects | BOY TEA</title><link href="assets/css/main.css" rel="stylesheet"><style>
+/* =========================================
+   VIDEO DETAILS — FINAL
+========================================= */
+
+:root {
+  --detail-width: 1144px;
+}
+
+/* 전체 페이지 */
+html {
+  min-height: 100%;
+  background: #f2f2f2;
+}
+
+body.detail-page {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  color: #111;
+
+  background-color: #f2f2f2;
+  background-image:
+    linear-gradient(
+      rgba(255,255,255,.55),
+      rgba(255,255,255,.55)
+    ),
+    url("assets/img/concrete_texture.png");
+
+  background-size: auto, 960px auto;
+  background-position: center top;
+  background-repeat: no-repeat, repeat;
+}
+
+/* 공통 정렬 기준 */
+body.detail-page .detail-container,
+body.detail-page .detail-header-inner {
+  width: min(
+    var(--detail-width),
+    calc(100% - 40px)
+  );
+  max-width: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+body.detail-page .detail-header {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+body.detail-page .detail-header::before,
+body.detail-page .detail-header::after {
+  content: none;
+}
+
+body.detail-page .detail-header-inner {
+  min-height: 82px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+body.detail-page .detail-logo {
+  color: #000;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+body.detail-page .detail-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 34px;
+  margin-left: auto;
+}
+
+body.detail-page .detail-nav a {
+  display: inline-block;
+  color: #111;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    transform .25s ease,
+    font-weight .25s ease;
+}
+
+body.detail-page .detail-nav a:hover {
+  transform: translateY(-3px);
+  font-weight: 800;
+}
+
+/* =========================================
+   HERO TITLE
+========================================= */
+
+body.detail-page .detail-hero {
+  background: transparent;
+  color: #111;
+  padding: 30px 0 18px;
+}
+
+body.detail-page .detail-hero .detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+
+  padding-bottom: 22px;
+  border-bottom: 1px dashed rgba(0,0,0,.45);
+}
+
+/* VIDEO PROJECT. */
+body.detail-page .detail-hero h1 {
+  margin: 0;
+  padding: 0;
+  width: auto;
+
+  font-family: "SUIT Variable", "SUIT", Arial, sans-serif;
+  font-size: clamp(36px, 4.2vw, 60px);
+  font-weight: 800;
+  letter-spacing: -.045em;
+  line-height: 1.1;
+
+  color: #000;
+  white-space: nowrap;
+}
+
+/* 돌아가기 */
+body.detail-page .detail-back {
+  flex-shrink: 0;
+  color: #000;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform .25s ease;
+}
+
+body.detail-page .detail-back:hover {
+  transform: translateX(-4px);
+}
+
+/* =========================================
+   PROJECT CONTENT
+========================================= */
+
+body.detail-page .detail-content {
+  flex: 1;
+  background: transparent;
+  padding: 20px 0 35px;
+}
+
+body.detail-page .detail-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.8fr) minmax(280px, 1fr);
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* 영상 */
+body.detail-page .detail-media {
+  overflow: hidden;
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: #111;
+  align-self: start;
+}
+
+body.detail-page .detail-media video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
+
+/* =========================================
+   PROJECT INFORMATION
+========================================= */
+
+body.detail-page .detail-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  height: 100%;
+  min-height: 0;
+  padding: 20px 22px;
+
+  border: 1.5px solid #111;
+  border-radius: 8px;
+  background: rgba(255,255,255,.35);
+  box-sizing: border-box;
+}
+
+body.detail-page .detail-info h2 {
+  margin: 0 0 15px;
+  padding-bottom: 12px;
+
+  font-size: 20px;
+  font-weight: 800;
+  color: #000;
+
+  border-bottom: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-info dl {
+  margin: 0;
+}
+
+body.detail-page .detail-info dt {
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 3px;
+}
+
+body.detail-page .detail-info dd {
+  margin: 0 0 12px;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* 프로젝트 소개 */
+body.detail-page .detail-description {
+  margin-top: auto;
+  padding-top: 13px;
+  border-top: 1px dashed rgba(0,0,0,.4);
+}
+
+body.detail-page .detail-description h3 {
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #000;
+}
+
+body.detail-page .detail-description p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+body.detail-page .detail-footer {
+  margin-top: auto;
+  padding: 20px 15px;
+
+  background: transparent;
+  border-top: 1px solid rgba(0,0,0,.25);
+
+  text-align: center;
+  font-size: 11px;
+  font-weight: 600;
+  color: #111;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 767px) {
+
+  body.detail-page .detail-header-inner {
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav {
+    margin: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-nav a {
+    font-size: 13px;
+  }
+
+  body.detail-page .detail-hero {
+    padding-top: 25px;
+  }
+
+  body.detail-page .detail-hero .detail-container {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  body.detail-page .detail-hero h1 {
+    font-size: clamp(30px, 7vw, 42px);
+  }
+
+  body.detail-page .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  body.detail-page .detail-info {
+    height: auto;
+  }
+
+  body.detail-page .detail-description {
+    margin-top: 15px;
+  }
+}
+
+*{box-sizing:border-box}.video-gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding:10px 0 36px}.video-card{padding:0;border:1px solid #aaa;border-radius:16px;overflow:hidden;background:#fff;color:#111;text-align:left;cursor:pointer;font:inherit;box-shadow:0 3px 12px #00000018;transition:transform .2s}.video-card:hover{transform:translateY(-4px)}.video-card:focus-visible,.video-close:focus-visible{outline:3px solid #254d69;outline-offset:4px}.video-thumb{position:relative;display:block}.video-thumb img{display:block;width:100%;aspect-ratio:758/728;object-fit:cover}.video-play{position:absolute;right:16px;bottom:16px;display:grid;place-items:center;width:42px;height:42px;background:#111c;color:#fff;border-radius:50%}.video-copy{display:block;padding:20px}.video-number{font-size:11px;font-weight:800;letter-spacing:.1em;color:#666}.video-copy h2{font-size:21px;margin:8px 0}.video-copy p{font-size:13px;line-height:1.6;margin:0;color:#555}.video-dialog{width:min(1080px,calc(100% - 32px));max-height:90vh;max-height:90dvh;padding:0;border:1px solid #111;border-radius:12px;background:#f4f4f1;color:#111}.video-dialog::backdrop{background:#000b}.video-modal-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 22px;border-bottom:1px solid #ccc}.video-modal-head h2{font-size:21px;margin:0}.video-close{border:0;background:transparent;font:inherit;font-size:28px;cursor:pointer;line-height:1;padding:4px 8px}.video-modal-body{padding:22px;display:grid;grid-template-columns:minmax(0,1.8fr) minmax(240px,1fr);gap:24px}.video-player{width:100%;aspect-ratio:16/9;display:block;background:#111}.video-summary{padding:0;background:transparent;color:#111}.video-summary h3{color:#111;font-size:16px;margin:0 0 12px}.video-summary dl{margin:0}.video-summary dt{font-size:11px;font-weight:800;margin:16px 0 4px}.video-summary dd{font-size:13px;line-height:1.7;margin:0}.video-about{font-size:14px;line-height:1.8}.video-error{font-size:13px;color:#8c241f;line-height:1.7}.video-error[hidden]{display:none}.gallery-intro{font-size:14px;line-height:1.7;color:#555;margin:0 0 20px}body.modal-open{overflow:hidden}@media(max-width:1000px){.video-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:767px){.video-modal-body{grid-template-columns:1fr}.video-modal-head,.video-modal-body{padding:16px}.video-gallery{gap:16px}.video-copy{padding:16px}.video-copy h2{font-size:18px}}@media(max-width:480px){.video-gallery{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){.video-card{transition:none}}
+</style></head><body class="detail-page"><header class="detail-header">
+    <div class="detail-header-inner">
+
+      <a href="index.html" class="detail-logo">
+        BOY TEA PORTFOLIO PROJECT
+      </a>
+
+      <nav class="detail-nav">
+        <a href="index.html#hero">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#resume">Resume</a>
+        <a href="index.html#portfolio">Portfolio</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+
+    </div>
+  </header><section class="detail-hero"><div class="detail-container"><h1>VIDEO PROJECT.</h1><a href="index.html#portfolio" class="detail-back">← BACK TO PORTFOLIO</a></div></section><main class="detail-content"><div class="detail-container"><p class="gallery-intro">광고부터 공간과 축제의 기록까지. 카드를 누르면 영상과 작업 설명을 확인할 수 있습니다.</p><div class="video-gallery" id="videoGallery"></div><noscript>영상 목록을 표시하려면 JavaScript를 활성화해 주세요.</noscript></div></main><footer class="detail-footer">
+    © 2026 BOY TEA PORTFOLIO PROJECT. ALL RIGHTS RESERVED.
+  </footer><dialog class="video-dialog" id="videoDialog" aria-labelledby="modalTitle"><div class="video-modal-head"><h2 id="modalTitle"></h2><button class="video-close" id="closeVideo" type="button" aria-label="영상 팝업 닫기">×</button></div><div class="video-modal-body"><div><video id="projectVideo" class="video-player" controls playsinline preload="none"></video><p id="videoError" class="video-error" role="status" hidden>영상 파일을 불러오지 못했습니다. assets/video 폴더의 파일명과 이 페이지 PROJECTS의 video 경로를 확인해 주세요.</p></div><section class="video-summary"><h3>PROJECT INFORMATION</h3><dl><dt>CATEGORY</dt><dd id="projectCategory"></dd><dt>ROLE</dt><dd id="projectRole"></dd><dt>TOOLS</dt><dd id="projectTools"></dd></dl><hr><h3>ABOUT PROJECT</h3><p class="video-about" id="projectAbout"></p></section></div></dialog><script>
+// 영상 파일명이 다르면 아래 PROJECTS의 video 경로만 수정하세요.
+// 02, 03은 실제 영상 편집물입니다. 소개 문구와 도구는 실제 작업 내역에 맞게 수정하세요.
+const PROJECTS = [
+  {
+    "title": "FORWARD · 한걸음 더",
+    "category": "AI 광고 영상",
+    "about": "생성형 AI로 구성한 신발 광고 영상입니다. 제품의 움직임과 분위기에 맞춰 장면을 연결하고 광고의 흐름을 구성했습니다.",
+    "role": "프롬프트 작성 · AI 영상 생성 · 영상 편집",
+    "tools": "Premiere Pro · 생성형 AI",
+    "poster": "assets/img/video-gallery/Thum_01.png",
+    "video": "assets/video/video_01.mp4"
+  },
+  {
+    "title": "동래읍성 역사축제",
+    "category": "실제 영상 편집",
+    "about": "AI로 생성한 광고가 아닌 실제 촬영 소스를 활용한 축제 홍보 편집물입니다. 현장의 분위기와 주요 장면을 선별하고, 컷 편집과 자막·음악의 호흡을 맞춰 축제의 흐름을 전달했습니다.",
+    "role": "장면 구성 · 컷 편집 · 자막 · 사운드 구성",
+    "tools": "Premiere Pro · After Effects",
+    "poster": "assets/img/video-gallery/Thum_02.png",
+    "video": "assets/video/video_02.mp4"
+  },
+  {
+    "title": "나만의 힐링 플레이스 · 삼광사",
+    "category": "실제 영상 편집",
+    "about": "AI 생성 광고가 아닌 실제 영상 소스를 활용한 힐링 영상 편집물입니다. 사찰의 풍경과 공간감을 중심으로 장면을 배열하고, 차분한 전환과 음악으로 편안한 감상을 유도했습니다.",
+    "role": "장면 구성 · 컷 편집 · 색감 조정 · 음악 편집",
+    "tools": "Premiere Pro",
+    "poster": "assets/img/video-gallery/Thum_03.png",
+    "video": "assets/video/video_03.mp4"
+  },
+  {
+    "title": "VELORA · OCEAN RESORT",
+    "category": "AI 콘셉트 광고",
+    "about": "가상의 해안 리조트 브랜드를 소개하는 콘셉트 광고입니다. 생성형 AI로 구성한 공간 이미지와 영상에 타이틀과 음악을 더해 브랜드의 분위기를 표현했습니다.",
+    "role": "콘셉트 구성 · AI 영상 생성 · 영상 편집",
+    "tools": "Premiere Pro · 생성형 AI",
+    "poster": "assets/img/video-gallery/Thum_04.png",
+    "video": "assets/video/video_04.mp4"
+  }
+];
+const gallery=document.querySelector('#videoGallery');
+const dialog=document.querySelector('#videoDialog');
+const player=document.querySelector('#projectVideo');
+const error=document.querySelector('#videoError');
+let opener;
+PROJECTS.forEach((project,index)=>{
+ const card=document.createElement('button');card.type='button';card.className='video-card';card.setAttribute('aria-haspopup','dialog');card.setAttribute('aria-label',project.title+' 영상과 설명 보기');
+ const thumb=document.createElement('span');thumb.className='video-thumb';const img=document.createElement('img');img.src=project.poster;img.alt=project.title;img.loading='lazy';thumb.append(img);const play=document.createElement('span');play.className='video-play';play.textContent='▶';play.setAttribute('aria-hidden','true');thumb.append(play);
+ const copy=document.createElement('span');copy.className='video-copy';const number=document.createElement('span');number.className='video-number';number.textContent='VIDEO '+String(index+1).padStart(2,'0')+' / '+project.category;const title=document.createElement('h2');title.textContent=project.title;const desc=document.createElement('p');desc.textContent='영상 재생 및 프로젝트 설명 보기';copy.append(number,title,desc);card.append(thumb,copy);gallery.append(card);
+ card.addEventListener('click',()=>{opener=card;document.querySelector('#modalTitle').textContent=project.title;document.querySelector('#projectCategory').textContent=project.category;document.querySelector('#projectRole').textContent=project.role;document.querySelector('#projectTools').textContent=project.tools;document.querySelector('#projectAbout').textContent=project.about;error.hidden=true;player.poster=project.poster;player.src=project.video;player.load();dialog.showModal();document.body.classList.add('modal-open');player.play().catch(()=>{});});
+});
+player.addEventListener('error',()=>{error.hidden=false;});
+document.querySelector('#closeVideo').addEventListener('click',()=>dialog.close());
+dialog.addEventListener('click',event=>{if(event.target===dialog){const box=dialog.getBoundingClientRect();if(event.clientX<box.left||event.clientX>box.right||event.clientY<box.top||event.clientY>box.bottom)dialog.close();}});
+dialog.addEventListener('close',()=>{player.pause();player.removeAttribute('src');player.load();document.body.classList.remove('modal-open');opener?.focus();});
+</script></body></html>
